@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+    --color-blue-dark: #13183f;
+    --color-blue-light: #666ca3;
+    --color-gray: #83869a;
+    --color-pink-dark: #f74780;
+    --color-pink-light: #ffa7c3;
+    --color-pink-gradient: #f02aa6;
+    --color-orange-gradient: #ff6f48;
+    --color-blue-gradient: #4851ff;
+    --color-gradient-orange-pink: linear-gradient(180deg, var(--color-orange-gradient), var(--color-pink-gradient));
+    --color-gradient-blue-pink: linear-gradient(180deg, var(--color-blue-gradient), var(--color-pink-gradient));
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+    --font-fs-heading-xl: 56px;
+    --font-fs-heading-l: 40px;
+    --font-fs-heading-m: 32px;
+    --font-fs-heading-s: 24px;
+    --font-fs-body-m: 18px;
+    --font-fs-body-s: 16px;
+}
+
+/* GENERAL ----------> */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+.container {
+    max-width: 1440px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* TYPOGRAPHY ----------> */
+
+.maj {
+    text-transform: uppercase;
+}
+
+.btn {
+    padding: 15px 30px;
+    border-radius: 30px;
+    color: white;
+}
+
+/* HEADER ----------> */
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header a {
+    background-color: var(--color-blue-dark);
+}
+
+/* MAIN ----------> */
+
+.top-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.top-grid div, .body-grid div {
+    border: 2px solid purple;
+}
+
+.title-block-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-block a {
+    background: var(--color-gradient-orange-pink);
+}
+
+.body-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(2, 325px);
+    gap: 40px
+}
+
+/* FOOTER ----------> */
+
+footer {
+    background-color: var(--color-blue-dark);
+    height: 120px;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer a {
+    background: var(--color-gradient-blue-pink);
+}
