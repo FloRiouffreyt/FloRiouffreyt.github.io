@@ -29,6 +29,7 @@ body {
     box-sizing: border-box;
     font-family: var(--font-main);
     background: linear-gradient(white 40%, var(--color-gray-light));
+    overflow-x: hidden;
 }
 
 .container {
