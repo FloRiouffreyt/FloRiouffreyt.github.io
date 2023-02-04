@@ -4,6 +4,7 @@
     --color-blue-dark: #13183f;
     --color-blue-light: #666ca3;
     --color-gray: #83869a;
+    --color-gray-light: #f0f1ff;
     --color-pink-dark: #f74780;
     --color-pink-light: #ffa7c3;
     --color-pink-gradient: #f02aa6;
@@ -27,10 +28,11 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-main);
+    background: linear-gradient(white 40%, var(--color-gray-light));
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 1110px;
     margin: auto;
 }
 
@@ -55,7 +57,9 @@ a {
 
 header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    padding: 25px 0;
 }
 
 header a {
@@ -70,7 +74,7 @@ header a {
 }
 
 .top-grid div, .body-grid div {
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
 }
 
 .title-block-wrapper {
@@ -87,7 +91,63 @@ header a {
     display: grid;
     grid-template-columns: repeat(3, 350px);
     grid-template-rows: repeat(2, 325px);
-    gap: 40px
+    gap: 80px 40px;
+    padding: 45px 0 140px 0;
+}
+
+.body-grid_color-box, .body-grid_white-box {
+    border-radius: 15px;
+    padding: 32px 32px 40px 32px;
+}
+
+.body-grid_color-box {
+    background: var(--color-gradient-orange-pink);
+}
+
+.body-grid_color-box h2 {
+    color: white;
+    font-size: var(--font-fs-heading-m);
+    font-weight: 800;
+    line-height: 40px;
+}
+
+.body-grid_white-box {
+    position: relative;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.body-grid_white-box h3 {
+    color: var(--color-blue-dark);
+    font-size: var(--font-fs-heading-s);
+    font-weight: 800;
+}
+
+.body-grid_white-box p {
+    color: var(--color-gray);
+    font-size: var(--font-fs-body-m);
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.body-grid_white-box a {
+    color: var(--color-pink-dark);
+    font-weight: 700;
+    font-size: var(--font-fs-body-m);
+    margin-top: auto;
+}
+
+.body-grid_white-box img {
+    position: absolute;
+    top: -26px;
+    left: 32px;
+}
+
+.body-grid_white-box a:hover,
+.body-grid_white-box a:focus-within {
+    color: var(--color-pink-light);
 }
 
 /* FOOTER ----------> */
