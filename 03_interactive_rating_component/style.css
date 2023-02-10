@@ -77,8 +77,10 @@ h1, h2, p {
 
 .card {
     background: var(--color-card-gradient);
-    height: 416px;
-    width: 412px;
+    max-height: 416px;
+    max-width: 412px;
+    height: 100%;
+    width: 100%;
     border-radius: 30px;
 }
 
@@ -148,4 +150,13 @@ h1, h2, p {
 
 .attribution a {
     color: var(--color-orange);
+}
+
+/* MEDIA QUERIES ----------> */
+
+@media (max-width: 450px) {
+    .card {
+        margin: 1rem;
+        width: auto;
+    }
 }
