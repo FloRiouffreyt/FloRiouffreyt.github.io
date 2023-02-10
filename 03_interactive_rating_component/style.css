@@ -114,6 +114,7 @@ h1, h2, p {
 .rating_state p,
 .rating_thanks p {
     color: var(--font-color-grey);
+    line-height: 24px;
 }
 
 .rating_btn_row {
