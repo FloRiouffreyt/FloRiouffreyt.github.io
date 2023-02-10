@@ -51,6 +51,7 @@ h1, h2, p {
     letter-spacing: 2px;
     padding: .75rem;
     border-radius: 1.5rem;
+    transition: 200ms ease-in-out;
 }
 
 .btn-submit:hover {
@@ -64,6 +65,7 @@ h1, h2, p {
     height: 50px;
     border-radius: 50%;
     color: var(--font-color-grey);
+    transition: 200ms ease-in-out;
 }
 
 .btn-rating:hover {
