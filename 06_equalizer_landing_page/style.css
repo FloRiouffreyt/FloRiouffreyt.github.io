@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+
+:root {
+    --font-main: 'IBM Plex Sans', sans-serif;
+    --color-cyan: #66e2dc;
+    --color-orange-dark: #fa7453;
+    --color-orange-light: #ffb964;
+    --color-light: #fcfaf9;
+    --color-dark: #191826;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-image: url(assets/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -350px -350px;
+}
+
+.container {
+    max-width: 1110px;
+    margin: auto;
+}
+
+/* TYPOGRAPHY ----------> */
+
+h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 88px;
+    line-height: 88px;
+    letter-spacing: -1px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 52px;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.body1 {
+    font-size: 20px;
+    line-height: 34px;
+    font-weight: 400;
+}
+
+.body2 {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+/* BUTTONS ----------> */
+
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 330px;
+    padding: 15px 0;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    transition: all 300ms ease-in-out;
+}
+
+.btn-light {
+    background: var(--color-light);
+    color: var(--color-dark);
+}
+
+.btn-light:hover {
+    background: var(--color-orange-light);
+}
+
+.btn-dark {
+    background: var(--color-dark);
+    color: var(--color-light);
+}
+
+.btn-dark:hover {
+    background: var(--color-cyan);
+    color: var(--color-light);
+}
+
+/* MAIN ----------> */
+
+.bg-pattern-img_top {
+    position: absolute;
+    top: -40px;
+    right: 0;
+}
+
+.title_block {
+    margin-bottom: 320px;
+}
+
+.main_block {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: var(--color-dark);
+    border-radius: 12px;
+    margin-bottom: 200px;
+}
+
+.phone-img {
+    height: 640px;
+    position: absolute;
+    top: -210px;
+    left: 100px;
+    z-index: 5;
+}
+
+.bg-pattern-img_main {
+    position: absolute;
+    top: -40px;
+    left: 333px;
+}
+
+.card {
+    position: absolute;
+    top: 90px;
+    right: 95px;
+    background: var(--color-orange-dark);
+    color: var(--color-light);
+    border-radius: 12px;
+    width: 320px;
+    padding: 54px;
+}
+
+.card p {
+    margin-bottom: 40px;
+}
+
+/* FOOTER ----------> */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
