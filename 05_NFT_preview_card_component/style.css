@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+    --color-bg: #0D192C;
+    --color-bg-card: #15263F;
+    --color-line: #2E405A;
+    --font-main: 'Outfit', sans-serif;
+    --font-color-main: white;
+    --font-color-light: #8BACD9;
+    --font-color-accent: #00FFF8;
+    --font-color-accent-alpha: rgba(0, 255, 248, .5);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-bg);
+    font-family: var(--font-main);
+}
+
+h1, p {
+    margin: 0;
+}
+
+a {
+    color: var(--font-color-main);
+    text-decoration: none;
+    transition: 300ms ease-in-out;
+}
+
+a:hover {
+    color: var(--font-color-accent);
+}
+
+/* MAIN ----------> */
+
+.wrapper {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    background: var(--color-bg-card);
+    width: 350px;
+    height: 596px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card_img_wrapper {
+    width: 302px;
+    height: 302px;
+    margin: 1.5rem;
+    position: relative;
+    transition: all 300ms ease-in-out;
+}
+
+.card_img_wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--font-color-accent-alpha);
+    transition: all 300ms ease-in-out;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.card_img_wrapper:hover::before {
+    opacity: 1;
+}
+
+.card_img_wrapper::after {
+    content: url(images/icon-view.svg);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 300ms ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.card_img_wrapper:hover::after {
+    opacity: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.card_content {
+    padding: 0 1.5rem;
+}
+
+.card_header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--font-color-main);
+    margin-bottom: 1rem;
+    text-align: start;
+}
+
+.card_content p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--font-color-light);
+}
+
+.card_header p {
+    font-size: 18px;
+    color: var(--font-color-light);
+    font-weight: 300;
+    text-align: start;
+    line-height: 26px;
+    margin-bottom: 1.5rem;
+}
+
+.value_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.value_price {
+    color: var(--font-color-accent) !important;
+    font-weight: 600 !important;
+}
+
+.value_price::before,
+.value_time::before {
+    display: inline;
+    vertical-align: middle;
+    margin-right: 6.5px;
+}
+
+.value_price::before {
+    content: url(images/icon-ethereum.svg);
+}
+
+.value_time::before {
+    content: url(images/icon-clock.svg);
+}
+
+.card_content hr {
+    margin: 1.5rem 0 1rem 0;
+    color: var(--color-line);
+}
+
+.user_row {
+    display: flex;
+    align-items: center;
+}
+
+.user_row img {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    margin: 0;
+    outline: 1px solid white;
+    margin-right: 1rem;
+}
+
+/* FOOTER ----------> */
+
+.attribution {
+    position: absolute;
+    bottom: 10px;
+    font-size: .85rem;
+    text-align: center;
+    color: var(--font-color-main);
+}
+
+.attribution a {
+    color: var(--font-color-accent);
+}
