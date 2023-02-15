@@ -15,13 +15,17 @@ body {
     font-family: var(--font-main);
     background-image: url(assets/bg-main-desktop.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: -350px -350px;
+    background-size: 140%;
+    background-position: -400px -220px;
 }
 
 .container {
     max-width: 1110px;
     margin: auto;
+}
+
+.logo {
+    cursor: pointer;
 }
 
 /* TYPOGRAPHY ----------> */
@@ -32,29 +36,29 @@ h1, h2, p {
 }
 
 h1 {
-    font-size: 88px;
-    line-height: 88px;
+    font-size: 5.5rem;
+    line-height: 5.5rem;
     letter-spacing: -1px;
     font-weight: 700;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
 }
 
 h2 {
-    font-size: 40px;
-    line-height: 52px;
+    font-size: 2.5rem;
+    line-height: 3.25rem;
     font-weight: 700;
-    margin-bottom: 22px;
+    margin-bottom: 1.375rem;
 }
 
 .body1 {
-    font-size: 20px;
-    line-height: 34px;
+    font-size: 1.25rem;
+    line-height: 2.125rem;
     font-weight: 400;
 }
 
 .body2 {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 1rem;
+    line-height: 1.625rem;
     font-weight: 400;
 }
 
@@ -66,11 +70,11 @@ h2 {
     border-radius: 12px;
     width: 100%;
     max-width: 330px;
-    padding: 15px 0;
-    margin-bottom: 16px;
-    font-size: 18px;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
     font-weight: 700;
-    transition: all 300ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 .btn-light {
@@ -92,6 +96,20 @@ h2 {
     color: var(--color-light);
 }
 
+.btn img {
+    display: inline;
+    vertical-align: text-top;
+    margin-right: 1rem;
+}
+
+/* HEADER ----------> */
+
+header {
+    padding: 4rem 0;
+    margin-bottom: 4rem;
+}
+
+
 /* MAIN ----------> */
 
 .bg-pattern-img_top {
@@ -101,7 +119,8 @@ h2 {
 }
 
 .title_block {
-    margin-bottom: 320px;
+    margin-bottom: 20rem;
+    padding-right: 15rem;
 }
 
 .main_block {
@@ -110,7 +129,7 @@ h2 {
     height: 600px;
     background: var(--color-dark);
     border-radius: 12px;
-    margin-bottom: 200px;
+    margin-bottom: 12.5rem;
 }
 
 .phone-img {
@@ -134,18 +153,64 @@ h2 {
     background: var(--color-orange-dark);
     color: var(--color-light);
     border-radius: 12px;
-    width: 320px;
-    padding: 54px;
+    width: 330px;
+    padding: 3.5rem 3.5rem 2rem 3.5rem;
+    z-index: 50;
 }
 
 .card p {
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
+}
+
+.card span {
+    font-size: 4rem;
+    font-weight: 700;
+    display: inline;
+    vertical-align: middle;
+    margin-right: 1rem;
 }
 
 /* FOOTER ----------> */
 
 footer {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    gap: 8.75rem;
+    align-items: flex-start;
+    padding-bottom: 5.75rem;
+}
+
+footer p {
+    max-width: 40ch;
+}
+
+footer p a {
+    text-decoration: none;
+    font-weight: 700;
+    color: inherit;
+    transition: all 200ms ease-in-out;
+}
+
+footer p a:hover {
+    color: var(--color-orange-dark);
+}
+
+.social_logos {
+    margin-left: auto;
+    align-self: center;
+}
+
+.social_icon:not(:last-child) {
+    margin-right: 1.25rem;
+}
+
+.social_icon {
+    transition: all 200ms ease-in-out;
+    display: inline;
+    vertical-align: middle;
+}
+
+.social_icon:hover {
+    cursor: pointer;
+    fill: var(--color-orange-dark);
 }
