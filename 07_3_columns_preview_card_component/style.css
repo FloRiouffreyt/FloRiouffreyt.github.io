@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --font-title: 'Big Shoulders Display', cursive;
+    --font-body: 'Lexend Deca', sans-serif;
+    --font-color-main: white;
+    --color-orange: #E28625;
+    --color-blue: #006971;
+    --color-green: #004140;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    color: var(--font-color-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 920px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    width: max-content;
+}
+
+h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    line-height: 3rem;
+}
+
+.btn {
+    border: none;
+    background: white;
+    border-radius: 1.5rem;
+    padding: .7rem 2rem;
+    font-size: 0.938rem;
+    line-height: 1.667rem;
+}
+
+.btn:hover {
+    background: transparent;
+    outline: 2px solid white;
+    color: white !important;
+}
+
+/* MAIN ----------> */
+
+.main-grid {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.main-grid section {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.main-grid section:first-child {
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.main-grid section:last-child {
+    border-radius: 0 .5rem .5rem 0;
+}
+
+.main-grid section svg {
+    margin-bottom: 2.25rem;
+}
+
+.main-grid section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.main-grid section p {
+    font-size: 0.938rem;
+    line-height: 1.667rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    padding-right: .5rem;
+    margin-bottom: 5.125rem;
+    opacity: .75;
+}
+
+.sedans {
+    background: var(--color-orange);
+}
+
+.sedans .btn {
+    color: var(--color-orange);
+}
+
+.suvs {
+    background: var(--color-blue);
+}
+
+.suvs .btn {
+    color: var(--color-blue);
+}
+
+.luxury {
+    background: var(--color-green);
+}
+
+.luxury .btn {
+    color: var(--color-green);
+}
+
+/* FOOTER ----------> */
+
+.attribution {
+    font-size: .85rem;
+    text-align: center;
+    color: black;
+    margin-bottom: 2rem;
+}
+
+.attribution a {
+    color: var(--color-blue);
+}
+
+/* MEDIA QUERIES ----------> */
+
+@media (max-width: 991px) {
+    .main-grid {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+    .container {
+        max-width: 320px;
+    }
+    .main-grid section:first-child {
+        border-radius: .5rem .5rem 0 0;
+    }
+
+    .main-grid section:last-child {
+        border-radius: 0 0 .5rem .5rem;
+    }
+    .main-grid section p {
+        margin-bottom: 1.667rem;
+    }
+}
