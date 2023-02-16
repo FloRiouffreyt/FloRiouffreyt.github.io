@@ -120,6 +120,10 @@ header {
 
 .title_block {
     margin-bottom: 20rem;
+}
+
+.title_block h1,
+.title_block p {
     padding-right: 15rem;
 }
 
@@ -180,6 +184,12 @@ footer {
     padding-bottom: 5.75rem;
 }
 
+.footer-right {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
 footer p {
     max-width: 40ch;
 }
@@ -213,4 +223,129 @@ footer p a:hover {
 .social_icon:hover {
     cursor: pointer;
     fill: var(--color-orange-dark);
+}
+
+/* MEDIA QUERIES ----------> */
+
+@media (max-width: 1200px) {
+    .container {
+        margin: 0 2.5rem;
+    }
+    .title_block h1,
+    .title_block p {
+        padding-right: 20rem;
+    }
+}
+
+@media (max-width: 991px) {   
+    body {
+        background-image: url(assets/bg-main-tablet.png);
+        background-size: 170%;
+        background-position: -450px -300px;
+    }
+    h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+    .body1 {
+        font-size: 1.125rem;
+    }
+    .title_block h1 {
+        padding-right: 18rem;
+    }
+    .title_block p {
+        padding-right: 12.5rem;
+    }
+    .bg-pattern-img_top {
+        height: 40%;
+    }
+    .phone-img {
+        height: 556px;
+        left: 50px;
+    }    
+    .bg-pattern-img_main {
+        position: absolute;
+        top: -40px;
+        left: 200px;
+    }        
+    .card {
+        position: absolute;
+        top: 150px;
+        right: 70px;
+        padding: 3.5rem 3.5rem 2rem 3.5rem;
+        width: 340px;
+    }
+    footer {
+        display: block;
+    }
+    footer img {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .bg-pattern-img_top {
+        display: none;
+    }
+    .title_block h1,
+    .title_block p {
+        padding-right: 0;
+    }
+    h1 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .body1 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        background-image: url(assets/bg-main-mobile.png);
+        background-size: 140%;
+        background-position: 50px -300px;
+    }
+    .container {
+        margin: 0;
+    }
+    header, .title_block, footer {
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }        
+    header {
+        margin-bottom: 0;
+    }
+    .title_block {
+        margin-bottom: 10rem;
+    }
+    .phone-img {
+        height: 430px;
+        left: calc(50% - 104px);
+        top: -100px;
+    }    
+    .bg-pattern-img_main {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 156px);
+    }        
+    .card {
+        position: absolute;
+        top: 400px;
+        right: 0;
+        padding: 3.5rem 3.5rem 2rem 3.5rem;
+        width: calc(100% - 7rem);
+    }
+    .main_block {
+        margin-bottom: 30rem;
+    }
+    .footer-right {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1.5rem;
+    }
+    .social_logos {
+        margin-left: 0;
+        align-self: self-start;
+    }
 }
