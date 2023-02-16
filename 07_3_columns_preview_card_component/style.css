@@ -15,6 +15,7 @@ body {
     padding: 0;
     font-family: var(--font-body);
     color: var(--font-color-main);
+    background: #f2f2f2;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,16 +32,12 @@ a {
     width: max-content;
 }
 
-h1 {
-    display: none;
-}
-
 h2, p {
     margin: 0;
     padding: 0;
 }
 
-h2 {
+h1, h2 {
     font-family: var(--font-title);
     font-weight: 700;
     font-size: 2.5rem;
