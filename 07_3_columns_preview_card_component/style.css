@@ -31,6 +31,10 @@ a {
     width: max-content;
 }
 
+h1 {
+    display: none;
+}
+
 h2, p {
     margin: 0;
     padding: 0;

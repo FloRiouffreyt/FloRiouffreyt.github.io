@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [HERE](https://your-solution-url.com)
-- Live Site URL: [HERE](https://your-live-site-url.com)
+- Solution URL: [HERE](https://www.frontendmentor.io/solutions/3-columns-preview-card-component-html-css-tWy2fH-C9s)
+- Live Site URL: [HERE](https://floriouffreyt.github.io/07_3_columns_preview_card_component/)
 
 ## My process
 
