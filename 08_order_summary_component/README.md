@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [HERE](https://your-solution-url.com)
-- Live Site URL: [HERE](https://your-live-site-url.com)
+- Solution URL: [HERE](https://www.frontendmentor.io/solutions/order-summary-component-html-css-s7l8EeFBFa)
+- Live Site URL: [HERE](https://floriouffreyt.github.io/08_order_summary_component/)
 
 ## My process
 
