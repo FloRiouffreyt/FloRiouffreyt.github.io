@@ -23,7 +23,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--font-main);
-    background: var(--color-bg-body);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -50,6 +49,8 @@ h1, h2, h3, h4, p {
     align-items: center;
     padding: 2.375rem 3.375rem 3.375rem 3.375rem;
     border-radius: 2em;
+    position: relative;
+    z-index: 2;
 }
 
 .card_result h1 {
@@ -104,6 +105,7 @@ h1, h2, h3, h4, p {
     padding: 2.375rem 2.5rem 2.875rem 2.5rem;
     border-radius: 0 2em 2em 0;
     position: relative;
+    box-shadow: 1rem 2rem 4rem .5rem var(--color-bg-body);
 }
 
 .card_summary::before {
@@ -114,7 +116,7 @@ h1, h2, h3, h4, p {
     top: 0;
     left: -4rem;
     background: white;
-    z-index: -1;
+    z-index: 1;
 }
 
 .card_summary h3 {
@@ -227,6 +229,9 @@ h1, h2, h3, h4, p {
 /* MEDIA QUERIES ----------> */
 
 @media (max-width: 786px) {
+    body {
+        min-height: auto;
+    }
     .card {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
