@@ -136,10 +136,48 @@ img {
         display: block;
         min-height: auto;
     }
+    h1 {
+        font-size: 1.75rem;
+        line-height: 2rem;
+    }
+    p {
+        font-size: 0.938rem;
+        line-height: 1.5rem;
+        padding: 0;
+        margin-bottom: 2.5rem;
+    }
+    img {
+        border-radius: .5rem .5rem 0 0;
+    }
+    .card_img::after {
+        border-radius: .5rem .5rem 0 0;
+    }
     .container {
         max-width: 375px;
     }
     .card {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 375px);
+        margin-top: 5.5rem;
+    }
+    .card_content {
+        padding: 2.5rem 3rem;
+        text-align: center;
+    }
+    .card_stats_row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .attribution {
+        position: static;
+        margin: 5rem auto;
+    }
+}
+
+@media (max-width: 450px) {
+    .container {
+        max-width: 325px;
+    }
+    .card {
+        grid-template-columns: repeat(1, 325px);
     }
 }
