@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --font-main: 'Red Hat Display', sans-serif;
+    --font-color-main: #28283d;
+    --font-color-light: rgb(135, 135, 157);
+    --color-white: #fafafa;
+    --color-bullet-border: rgba(135,135,157,.25);
+    --color-cyan-main: #4d96a9;
+    --color-cyan-alt: #8FE3F9;
+    --color-cyan-hover: #71C0D4;
+    --color-purple-main: #855fb1;
+    --color-purple-alt: #d9b8ff;
+    --color-purple-hover: #B18BDD;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-white);
+    color: var(--font-color-main);
+}
+body, button {
+    font-family: var(--font-main);
+}
+
+.bullet {
+    background: var(--color-white);
+    color: var(--font-color-light);
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-bullet-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.bullet::before {
+    content: '';
+    border: 1px solid var(--color-bullet-border);
+    height: 5.25rem;
+    position: absolute;
+    bottom: 3.5rem;
+}
+
+/* TYPOGRAPHY ----------> */
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 900;
+    margin-bottom: 2.125rem;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--color-cyan-main);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+h3 {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+    font-weight: 900;
+}
+
+p {
+    color: var(--font-color-light);
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    font-weight: 500;
+}
+
+/* BUTTONS ----------> */
+
+.btn {
+    border: none;
+    cursor: pointer;
+    color: var(--color-white);
+    border-radius: 1.75rem;
+    font-weight: 900;
+    padding: 1rem 2.5rem;
+}
+
+.btn-cyan {
+    background: var(--color-cyan-main);
+}
+.btn-cyan:hover {
+    background: var(--color-cyan-hover);
+}
+.btn-purple {
+    background: var(--color-purple-main);
+}
+.btn-purple:hover {
+    background: var(--color-purple-hover);
+}
+
+.version-cyan {
+    color: var(--color-cyan-alt);
+}
+.version-purple {
+    color: var(--color-purple-alt);
+}
+
+/* HEADER ----------> */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+}
+
+/* MAIN ----------> */
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 12.125rem;
+}
+
+.hero-gallery {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.h-g-left {
+    background-image: url(assets/desktop/image-hero-left.png);
+    background-position-x: right 6rem;
+}
+
+.h-g-right {
+    background-image: url(assets/desktop/image-hero-right.png);
+    background-position-x: left 6rem;
+}
+
+.hero-main {
+    text-align: center;
+    max-width: 100%;
+    width: 540px;
+    margin: auto;
+}
+
+.hero-main p {
+    margin-bottom: 2rem;
+}
+
+.hero-btn-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.bullet-main {
+    margin-bottom: 4rem;
+}
+
+.main-content, .main-content-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.875rem;
+    margin-bottom: 5rem;
+}
+
+.main-gallery img {
+    width: 255px;
+    border-radius: .5rem;
+}
+
+.main-content-text {
+    margin-bottom: 11.5rem;
+    max-width: 540px;
+    text-align: center;
+}
+
+.main-content-text h2 {
+    margin-bottom: 1rem;
+}
+
+.main-content-text h3 {
+    padding: 0 3rem;
+    margin-bottom: 2rem;
+}
+
+.main-content-text p {
+    padding: 0 1rem;
+}
+
+/* FOOTER ----------> */
+
+footer {
+    background-image: url(assets/desktop/image-footer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+footer::after {
+    content: '';
+    background: var(--color-cyan-main);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .9;
+}
+
+footer h3, footer p {
+    color: var(--color-white);
+}
+
+.bullet-footer {
+    position: absolute;
+    z-index: 1;
+    top: -1.75rem;
+    left: calc(50% - 1.775rem)
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    gap: 3rem;
+    padding: 7.25rem 0 6.5rem 0;
+    margin: auto;
+    max-width: 1110px;
+}
+
+.footer-title, .footer-text {
+    max-width: 350px;
+}
+
+.footer-btn {
+    margin-left: auto;
+}
+
+/* MEDIA QUERIES */
