@@ -5,7 +5,7 @@
     --font-color-main: #28283d;
     --font-color-light: rgb(135, 135, 157);
     --color-white: #fafafa;
-    --color-bullet-border: rgba(135,135,157,.25);
+    --color-bullet-border: rgba(135,135,157,.2);
     --color-cyan-main: #4d96a9;
     --color-cyan-alt: #8FE3F9;
     --color-cyan-hover: #71C0D4;
@@ -88,6 +88,7 @@ p {
     border-radius: 1.75rem;
     font-weight: 900;
     padding: 1rem 2.5rem;
+    transition: 200ms ease-in-out;
 }
 
 .btn-cyan {
@@ -179,7 +180,7 @@ header {
 }
 
 .main-gallery img {
-    width: 255px;
+    max-width: 255px;
     border-radius: .5rem;
 }
 
@@ -254,3 +255,22 @@ footer h3, footer p {
 }
 
 /* MEDIA QUERIES */
+
+@media (max-width: 1380px) {  
+    .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 12.125rem;
+    }
+    .hero-gallery {
+        height: 300px;
+    }
+    .h-g-left {
+        background-image: url(assets/tablet/image-hero.png);
+        background-position-x: center;
+        margin-bottom: 4.5rem;
+    }
+    .h-g-right {
+        display: none;
+    }
+}
