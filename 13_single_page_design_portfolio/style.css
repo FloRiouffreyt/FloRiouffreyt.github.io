@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap');
+
+:root {
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+    --font-color-main: #030303;
+    --font-color-alt: #7A746E;
+    --font-color-light: #FFF7F0;
+
+    --font-heading-L-fs: 3.5rem;
+    --font-heading-M-fs: 2.5rem;
+    --font-heading-S-fs: 2rem;
+
+    --font-heading-L-fw: 700;
+    --font-heading-M-fw: 700;
+    --font-heading-S-fw: 700;
+
+    --font-heading-L-lh: 70px;
+    --font-heading-M-lh: 51px;
+    --font-heading-S-lh: 40px;
+
+    --font-body-M-fs: 1.125rem;
+    --font-body-M-fw: 400;
+    --font-body-M-lh: 28px;
+
+    --color-bg: #fff7f0;
+    --color-black: #030303;
+    --color-blue: #755cde;
+    --color-yellow: #f6a560;
+    --color-pink: #f39e9e;
+    --color-coral: #eb7565;
+    --color-cyan: #61c4b7;
+    --color-eggplant: #552049;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--font-color-main);
+    background: var(--color-bg);
+}
+
+.container {
+    max-width: 1110px;
+    margin: auto;
+}
+
+.hero-title-container {
+    max-width: 1110px;
+    margin: auto;
+}
+
+/* BUTTONS */
+
+.btn {
+    cursor: pointer;
+    padding: .875em 2.875em;
+    border-radius: 1.75em;
+    width: max-content;
+}
+
+.btn-black {
+    background: var(--color-black);
+    color: var(--font-color-light);
+}
+
+.btn-coral {
+    background: var(--color-coral);
+    color: var(--font-color-light);
+}
+
+/* HEADER - FOOTER ----------> */
+
+header,
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img,
+footer img {
+    width: 64px;
+    height: 64px;
+}
+
+/* HEADER TITLE ----------> */
+
+.header-title {
+    text-align: center;
+}
+
+.header-title h1 {
+    font-size: var(--font-heading-L-fs);
+    font-weight: var(--font-heading-L-fw);
+    line-height: var(--font-heading-L-lh);
+}
+
+.header-title p {
+    font-size: var(--font-body-M-fs);
+    font-weight: var(--font-body-M-fw);
+    line-height: var(--font-body-M-lh);
+    color: var(--font-color-alt);
+}
+
+/* HERO GRID ----------> */
+
+
+
+/* HERO TITLE ----------> */
+
+.hero-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hero-title-img,
+.hero-title-content {
+    flex: 1;
+}
+
+.hero-title img {
+    width: 445px;
+    height: 445px;
+}
+
+.hero-title h2 {
+    font-size: var(--font-heading-M-fs);
+    font-weight: var(--font-heading-M-fw);
+    line-height: var(--font-heading-M-lh);
+}
+
+.hero-title-content-subtitle {
+    font-size: var(--font-body-M-fs);
+    font-weight: var(--font-body-M-fw);
+    line-height: var(--font-body-M-lh);
+    color: var(--font-color-alt);
+}
+
+/* CAROUSEL ----------> */
+
+.carousel {
+    text-align: center;
+}
+
+/* CTA ----------> */
+
+.CTA {
+    background: var(--color-black);
+    color: var(--font-color-light);
+    display: flex;
+    align-items: center;
+}
+
+.CTA-text,
+.CTA-btn {
+    flex: 1;
+}
+
+.CTA-text h3 {
+    font-size: var(--font-heading-S-fs);
+    font-weight: var(--font-heading-S-fw);
+    line-height: var(--font-heading-S-lh);
+}
+
+.CTA-text p {
+    font-size: var(--font-body-M-fs);
+    font-weight: var(--font-body-M-fw);
+    line-height: var(--font-body-M-lh);
+}
