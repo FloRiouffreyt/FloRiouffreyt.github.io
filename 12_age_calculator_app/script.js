@@ -4,7 +4,7 @@ dayjs.extend(window.dayjs_plugin_isLeapYear);
 const day = document.querySelector('#input0');
 const month = document.querySelector('#input1');
 const year = document.querySelector('#input2');
- 
+
 const dayResult = document.querySelector('#days');
 const monthResult = document.querySelector('#months');
 const yearResult = document.querySelector('#years');
