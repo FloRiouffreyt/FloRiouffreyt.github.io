@@ -283,6 +283,9 @@ footer h3, footer p {
         max-width: 180px;
         border-radius: .5rem;
     }
+    footer {
+        background-image: url(assets/tablet/image-footer.jpg);
+    }
     .footer-content {
         display: flex;
         flex-direction: column;
@@ -342,6 +345,9 @@ footer h3, footer p {
     .main-gallery img {
         max-width: 160px;
         border-radius: .5rem;
+    }
+    footer {
+        background-image: url(assets/mobile/image-footer.jpg);
     }
     .footer-title {
         max-width: 100%;
