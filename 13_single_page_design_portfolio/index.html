@@ -13,9 +13,9 @@
 
 <body>
 
-	<header class="container">
+	<header class="header-bar container">
 		<img src="assets/logo.svg" alt="logo">
-		<p class="btn btn-black">Free Consultation</p>
+		<button class="btn btn-black">Free Consultation</button>
 	</header>
 
 	<main>
@@ -24,17 +24,17 @@
 			<h1>Design solutions made easy</h1>
 			<p>
 				With over ten years of experience in various design disciplines,
-				I’m your one-stop shop for your design needs.
+				I'm your one-stop shop for your design needs.
 			</p>
 		</section>
 
 		<section class="hero-grid container">
-			Graphic Design
-			UI/UX
-			Apps
-			Photography
-			Illustrations
-			Motion Graphics
+			<div class="hero-grid-element">Graphic Design</div>
+			<div class="hero-grid-element">UI/UX</div>
+			<div class="hero-grid-element">Apps</div>
+			<div class="hero-grid-element">Photography</div>
+			<div class="hero-grid-element">Illustrations</div>
+			<div class="hero-grid-element">Motion Graphics</div>
 		</section>
 
 		<section class="hero-title hero-title-container">
@@ -42,44 +42,56 @@
 				<img src="assets/image-amy.webp" alt="">
 			</div>
 			<div class="hero-title-content">
-				<h2>I’m Amy, and I’d love to work on your next project</h2>
+				<h2>I'm Amy, and I'd love to work on your next project</h2>
 				<p class="hero-title-content-subtitle">
 					I love working with others to create beautiful design solutions.
-					I’ve designed everything from brand illustrations
-					to complete mobile apps. I’m also handy with a camera!
+					I've designed everything from brand illustrations
+					to complete mobile apps. I'm also handy with a camera!
 				</p>
-				<p class="btn btn-coral">Free Consultation</p>
+				<button class="btn btn-coral">Free Consultation</button>
 			</div>
 		</section>
 
 		<section class="carousel">
 			<h3>My Work</h3>
-			SLIDERS
-			2 ARROWS
+			<div class="carousel-slider">
+				<img class="carousel-slider-img" src="assets/image-slide-1.jpg" alt="">
+				<img class="carousel-slider-img" src="assets/image-slide-2.jpg" alt="">
+				<img class="carousel-slider-img current-slide" src="assets/image-slide-3.jpg" alt="">
+				<img class="carousel-slider-img" src="assets/image-slide-4.jpg" alt="">
+				<img class="carousel-slider-img" src="assets/image-slide-5.jpg" alt="">
+			</div>
+			<div class="carousel-btn-row">
+				<button class="carousel-btn" id="prev-btn">
+					<img src="assets/icon-arrow-left.svg" alt="left arrow">
+				</button>
+				<button class="carousel-btn" id="next-btn">
+					<img src="assets/icon-arrow-right.svg" alt="right arrow">
+				</button>
+			</div>
 		</section>
 
 		<section class="CTA container">
 			<div class="CTA-text">
 				<h3>Book a call with me</h3>
 				<p>
-					I’d love to have a chat to see how I can help you.
+					I'd love to have a chat to see how I can help you.
 					The best first step is for us to discuss your project
 					during a free consultation. Then we can move forward from there.
 				</p>
 			</div>
 			<div class="CTA-btn">
-				<p class="btn btn-coral">Free Consultation</p>
+				<button class="btn btn-coral">Free Consultation</button>
 			</div>
 		</section>
 
 	</main>
 
-	<footer class="container">
+	<footer class="footer-bar container">
 		<img src="assets/logo.svg" alt="logo">
-		<p class="btn btn-black">Free Consultation</p>
+		<button class="btn btn-black">Free Consultation</button>
 	</footer>
 
+	<script src="script.js"></script>
 </body>
-<script src="script.js"></script>
-
 </html>
