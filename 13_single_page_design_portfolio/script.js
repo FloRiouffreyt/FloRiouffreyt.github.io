@@ -2,8 +2,9 @@ const prevBtn = document.querySelector('#prev-btn');
 const nextBtn = document.querySelector('#next-btn');
 const slider = document.querySelector('.carousel-slider');
 const sliderImages = Array.from(slider.children);
+console.log(sliderImages[3]);
 
-const slideWidth = sliderImages[0].naturalWidth;
+const slideWidth = sliderImages[0].clientWidth;
 const imgGap = 16;
 const moveAmount = slideWidth + imgGap;
 
