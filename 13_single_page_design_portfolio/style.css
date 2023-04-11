@@ -501,10 +501,6 @@ footer img {
         font-size: 1.125rem;
         line-height: 28px;
     }
-    
-    .carousel-slider-img {
-        width: 270px;
-    }
 
     .CTA {
         padding: 3rem 1.5rem;
@@ -519,5 +515,11 @@ footer img {
     .CTA-text {
         text-align: center;
         padding: 0 .5rem;
+    }
+}
+
+@media screen and (max-width:480px) {   
+    .carousel-slider-img {
+        width: 270px;
     }
 }
