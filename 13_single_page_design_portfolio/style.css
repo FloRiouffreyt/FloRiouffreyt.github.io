@@ -212,6 +212,11 @@ footer img {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 5.5rem;
+    direction: rtl;
+}
+
+.hero-title-img {
+    padding: 2.5rem;
 }
 
 .hero-title-img img {
@@ -220,7 +225,9 @@ footer img {
 }
 
 .hero-title-content {
-    padding: 5rem;
+    min-width: 380px;
+    direction: ltr;
+    padding: 2.5rem;
 }
 
 .hero-title h2 {
@@ -432,7 +439,7 @@ footer img {
     .footer-bar {
         margin: 1rem 1rem 2.5rem 1rem;
     }
-    
+
     .header-title h1 {
         font-size: 2.25rem;
         line-height: 45px;
@@ -443,6 +450,7 @@ footer img {
         font-size: 1rem;
         line-height: 26px;
         max-width: 285px;
+        margin-bottom: 2rem;
     }
 
     .hero-grid {
@@ -450,6 +458,7 @@ footer img {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 182px 182px 182px 158px 182px 182px;
         max-width: 350px;
+        margin-bottom: 5rem;
     }
     
     .hero-grid-element:nth-child(1) {
@@ -488,7 +497,7 @@ footer img {
     }
 
     .hero-title {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     
     .hero-title-img img {
