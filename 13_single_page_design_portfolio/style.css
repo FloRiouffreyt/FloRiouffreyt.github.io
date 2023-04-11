@@ -208,29 +208,19 @@ footer img {
 /* HERO TITLE ----------> */
 
 .hero-title {
-    position: relative;
-    height: 445px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 5.5rem;
 }
 
-.hero-title-content {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 50%;
-    padding-right: 2rem;
+.hero-title-img img {
+    width: 445px;
+    height: 445px;
 }
 
-.hero-title::before {
-    content: "";
-    background-image: url(assets/image-amy.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 445px;
-    width: 445px;
-    position: absolute;
-    top: 0;
-    left: 0;
+.hero-title-content {
+    padding: 5rem;
 }
 
 .hero-title h2 {
@@ -495,6 +485,20 @@ footer img {
     .hero-title h2 {
         font-size: 2rem;
         line-height: 40px;
+    }
+
+    .hero-title {
+        flex-direction: column;
+    }
+    
+    .hero-title-img img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-title-content {
+        text-align: center;
+        padding: 2rem;
     }
 
     .hero-title-content-subtitle {
