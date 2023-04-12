@@ -4,8 +4,10 @@
 
     --font-color-white: #FFF;
     --font-color-grey: #5E7A7D;
+    --font-color-grey-input: #9EBBBD;
     --font-color-green-dark: #00474B;
     --font-color-green-light: #26C2AE;
+    --font-color-error: #E17457;
 
     --color-bg-blue: #C5E4E7;
     --color-bg-white: #FFF;
@@ -29,7 +31,7 @@ body {
 }
 
 ::placeholder {
-    color: var(--font-color-grey);
+    color: var(--font-color-grey-input);
     opacity: 1;
 }
 
@@ -41,6 +43,7 @@ body {
 
 input:focus-visible {
     outline: 2px solid var(--font-color-green-light);
+    caret-color: var(--font-color-green-light);
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -104,6 +107,11 @@ appearance: textfield;
     flex-direction: column;
     width: 100%;
     gap: .5rem;
+}
+
+.labeled-input-text {
+    display: flex;
+    justify-content: space-between;
 }
 
 .bill-input input,
@@ -182,7 +190,8 @@ appearance: textfield;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--font-color-green-dark);
-    text-align: center;
+    text-align: end;
+    padding-right: 1rem;
 }
 
 /* RESULT SECTION ----------> */
@@ -246,6 +255,10 @@ appearance: textfield;
 
 /* STATES ----------> */
 
+.hidden {
+    display: none;
+}
+
 .active {
     background: var(--color-bg-green-light);
     color: var(--font-color-green-dark);
@@ -254,6 +267,14 @@ appearance: textfield;
 .inactive {
     background: var(--color-bg-green-dark-inactive);
     pointer-events: none;
+}
+
+.error-text {
+    color: var(--font-color-error)!important;
+}
+
+.error-input {
+    outline: 2px solid var(--font-color-error)!important;
 }
 
 /* FOOTER ----------> */

@@ -25,7 +25,10 @@
 
                 <div class="calculation-grid">
                     <div class="labeled-input bill-input">
-                        <label>Bill</label>
+                        <div class="labeled-input-text">
+                            <label>Bill</label>
+                            <label class="error-text hidden" id="bill-error">Can't be zero</label>
+                        </div>
                         <input type="number" placeholder="0" id="bill">
                     </div>
                     <div class="tip-select">
@@ -40,8 +43,11 @@
                         </div>
                     </div>
                     <div class="labeled-input people-input">
-                        <label>Number of people</label>
-                        <input type="number" placeholder="0" id="people">
+                        <div class="labeled-input-text">
+                            <label>Number of people</label>
+                            <label class="error-text hidden" id="people-error">Can't be zero</label>
+                        </div>
+                        <input class="" type="number" placeholder="0" id="people">
                     </div>
                 </div>
 
