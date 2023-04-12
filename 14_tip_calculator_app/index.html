@@ -36,11 +36,11 @@
                     <div class="tip-select">
                         <label>Select Tip %</label>
                         <div class="tip-select-grid">
-                            <button class="tip-btn">5%</button>
-                            <button class="tip-btn">10%</button>
-                            <button class="tip-btn">15%</button>
-                            <button class="tip-btn">25%</button>
-                            <button class="tip-btn">50%</button>
+                            <button class="tip-btn" value="0.05">5%</button>
+                            <button class="tip-btn" value="0.1">10%</button>
+                            <button class="tip-btn" value="0.15">15%</button>
+                            <button class="tip-btn" value="0.25">25%</button>
+                            <button class="tip-btn" value="0.5">50%</button>
                             <input class="tip-custom-input" type="number" value="" placeholder="Custom" id="tip">
                         </div>
                     </div>
@@ -57,13 +57,13 @@
                     <div class="result-grid-content">
 						<div class="result-row">
 							<p class="result-text">Tip Amount<br><span>/ person</span></p>
-							<p class="result-amount">$0.00</p>
+							<p class="result-amount" id="result-tip">$0.00</p>
 						</div>
 						<div class="result-row">
 							<p class="result-text">Total<br><span>/ person</span></p>
-							<p class="result-amount">$0.00</p>
+							<p class="result-amount" id="result-total">$0.00</p>
 						</div>
-						<button class="reset-btn">RESET</button>
+						<button class="reset-btn" id="reset">RESET</button>
 					</div>
                 </div>
 
