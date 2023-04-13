@@ -20,6 +20,14 @@ function displayErrorWithoutText(input) {
     }
 }
 
+function getResults(bill, tip, people) {
+    tipAmountPerPerson = (bill * tip) / people;
+    totalPerPerson = (bill / people) + tipAmountPerPerson;
+
+    isNaN(tipAmountPerPerson) || tipAmountPerPerson === Infinity ? resultTip.innerHTML = "$0.00" : resultTip.innerHTML = '$' + tipAmountPerPerson.toFixed(2);
+    isNaN(totalPerPerson) || totalPerPerson === Infinity ? resultTotal.innerHTML = "$0.00" : resultTotal.innerHTML = '$' + totalPerPerson.toFixed(2);
+}
+
 const inputBill = document.querySelector('#bill');
 const inputBillError = document.querySelector('#bill-error');
 
@@ -80,20 +88,22 @@ window.addEventListener('change', () => {
     
     if (inputTip.value !== '') {
         var tip = parseFloat(parseFloat(inputTip.value) / 100);
-    } else if (inputTip.value === '') {
-        for (let i = 0; i < tipButtons.length; i++) {
-            if (tipButtons[i].classList.contains('active')) {
-                var tip = tipButtons[i].value;
-            }
-        }
     }
 
-    tipAmountPerPerson = (bill * tip) / people;
-    totalPerPerson = (bill / people) + tipAmountPerPerson;
+    getResults(bill, tip, people);
 
-    isNaN(tipAmountPerPerson) || tipAmountPerPerson === Infinity ? resultTip.innerHTML = "$0.00" : resultTip.innerHTML = '$' + tipAmountPerPerson.toFixed(2);
-    isNaN(totalPerPerson) || totalPerPerson === Infinity ? resultTotal.innerHTML = "$0.00" : resultTotal.innerHTML = '$' + totalPerPerson.toFixed(2);
+})
 
+window.addEventListener('click', e => {
+    if (!e.target.matches('.tip-btn')) {
+        return false;
+    } else {
+        let bill = parseFloat(inputBill.value);
+        let people = parseInt(inputPeople.value);
+        let tip = e.target.value;
+
+        getResults(bill, tip, people)
+    }
 })
 
 // ---------- RESET BUTTON
