@@ -1,4 +1,4 @@
-// ERRORS
+// ---------- ERRORS
 
 function displayErrorWithText(input, error) {
     if (input.value <= 0) {
@@ -41,14 +41,13 @@ inputTip.addEventListener('change', () => {
             tipButtons[i].classList.remove('active');
         }
     }
-    const customTip = document.querySelector('#tip').value / 100;
 })
 
 inputPeople.addEventListener('change', () => {
     displayErrorWithText(inputPeople, inputPeopleError);
 })
 
-// BUTTONS ACTIVATED
+// ---------- BUTTONS ACTIVATED
 
 window.addEventListener('click', e => {
     if (!e.target.matches('.tip-btn')) {
@@ -59,27 +58,45 @@ window.addEventListener('click', e => {
                 tipButtons[i].classList.remove('active');
                 e.target.classList.add('active');
                 inputTip.value = "";
+                inputTip.classList.remove('error-input')
             } else {
                 e.target.classList.add('active');
                 inputTip.value = "";
+                inputTip.classList.remove('error-input')
             }
         }
     }
 })
 
-// TIPS CALCUTATIONS
+// ---------- TIPS CALCUTATIONS
 
 const resultTip = document.querySelector('#result-tip');
 const resultTotal = document.querySelector('#result-total');
 
-// total tip = bill value * % of tip (e.g 10% tip for $100 bill => 100 * 0.1 = $10)
-// tip per person = total tip / nb of persons (e.g $10 / 2 = $5 each)
-// "tip amount per person" = (bill value * tip% ) / nb of persons
-// "total per person" = (bill value / nb of persons) + tip amount per person
+window.addEventListener('change', () => {
 
-// const totalTip = inputBill.value * tipAmount;
+    let bill = parseFloat(inputBill.value);
+    let people = parseInt(inputPeople.value);
+    
+    if (inputTip.value !== '') {
+        var tip = parseFloat(parseFloat(inputTip.value) / 100);
+    } else if (inputTip.value === '') {
+        for (let i = 0; i < tipButtons.length; i++) {
+            if (tipButtons[i].classList.contains('active')) {
+                var tip = tipButtons[i].value;
+            }
+        }
+    }
 
-// RESET BUTTON
+    tipAmountPerPerson = (bill * tip) / people;
+    totalPerPerson = (bill / people) + tipAmountPerPerson;
+
+    isNaN(tipAmountPerPerson) || tipAmountPerPerson === Infinity ? resultTip.innerHTML = "$0.00" : resultTip.innerHTML = '$' + tipAmountPerPerson.toFixed(2);
+    isNaN(totalPerPerson) || totalPerPerson === Infinity ? resultTotal.innerHTML = "$0.00" : resultTotal.innerHTML = '$' + totalPerPerson.toFixed(2);
+
+})
+
+// ---------- RESET BUTTON
 
 const resetBtn = document.querySelector('#reset');
 
@@ -87,6 +104,7 @@ resetBtn.addEventListener('click', () => {
 
     inputBill.value = "";
     inputTip.value = "";
+    inputTip.classList.remove('error-input')
     inputPeople.value = "";
     resultTip.innerHTML = "$0.00";
     resultTotal.innerHTML = "$0.00";
