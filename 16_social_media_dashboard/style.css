@@ -113,6 +113,7 @@ header {
     border-radius: 12px;
     position: relative;
     cursor: pointer;
+    background: var(--color-btn-bg-inactive);
 }
 
 #theme-btn::after {
@@ -122,29 +123,22 @@ header {
     height: 18px;
     border-radius: 50%;
     top: 50%;
+    background: var(--color-LT-bg-card-grey);
+    left: 4px;
     transform: translateY(-50%);
 }
 
-.inactive {
-    background: var(--color-btn-bg-inactive);
-}
-
-.inactive:hover {
+#theme-btn:hover {
     background: var(--color-btn-bg-active);
-}
-
-.inactive::after{
-    background: var(--color-LT-bg-card-grey);
-    right: 3px;
 }
 
 .active {
-    background: var(--color-btn-bg-active);
+    background: var(--color-btn-bg-active) !important;
 }
 
 .active::after {
-    background: var(--color-btn-toggle-active);
-    left: 3px;
+    background: var(--color-btn-toggle-active) !important;
+    left: 26px !important;
 }
 
 /* MAIN ----------> */
