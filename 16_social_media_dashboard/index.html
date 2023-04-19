@@ -9,19 +9,123 @@
             type="image/png"
             sizes="32x32"
             href="./images/favicon-32x32.png">
-        <title>Frontend Mentor | [Challenge Name Here]</title>
+        <title>Frontend Mentor | Social media dashboard</title>
     </head>
     <body>
-        Social Media Dashboard Total Followers:23,004 Dark Mode @nathanf 1987 Followers
-        12 Today @nathanf 1044 Followers 99 Today @realnathanf 11k Followers 1099 Today
-        Nathan F. 8239 Subscribers 144 Today Overview - Today Page Views 87 3% Likes 52
-        2% Likes 5462 2257% Profile Views 52k 1375% Retweets 117 303% Likes 507 553%
-        Likes 107 19% Total Views 1407 12%
-        <div class="attribution">
+
+        <header>
+            <div class="header container">
+                <div class="header-titles">
+                    <h1>Social Media Dashboard</h1>
+                    <p>Total Followers: 23,004</h2>
+                </div>
+                <div class="header-switch">
+                    <label for="theme-btn">Dark Mode</label>
+                    <input type="checkbox" name="theme" id="theme-btn" class="inactive">
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="main__grid container">
+                <div class="main__grid_card facebook">
+                    <p class="main__grid_card-username">@nathanf</p>
+                    <div class="main__grid_card_stats">
+                        <p class="main__grid_card-followers">1987</p>
+                        <p class="main__grid_card-text">Followers</p>
+                    </div>
+                    <p class="main__grid_card-trend up">12 Today</p>
+                </div>
+                <div class="main__grid_card twitter">
+                    <p class="main__grid_card-username">@nathanf</p>
+                    <div class="main__grid_card_stats">
+                        <p class="main__grid_card-followers">1044</p>
+                        <p class="main__grid_card-text">Followers</p>
+                    </div>
+                    <p class="main__grid_card-trend up">99 Today</p>
+                </div>
+                <div class="main__grid_card instagram">
+                    <p class="main__grid_card-username">@realnathanf</p>
+                    <div class="main__grid_card_stats">
+                        <p class="main__grid_card-followers">11k</p>
+                        <p class="main__grid_card-text">Followers</p>
+                    </div>
+                    <p class="main__grid_card-trend up">1099 Today</p>
+                </div>
+                <div class="main__grid_card youtube">
+                    <p class="main__grid_card-username">Nathan F.</p>
+                    <div class="main__grid_card_stats">
+                        <p class="main__grid_card-followers">8239</p>
+                        <p class="main__grid_card-text">Subscribers</p>
+                    </div>
+                    <p class="main__grid_card-trend down">144 Today</p>
+                </div>
+            </div>
+        </main>
+
+        <section class="overview container">
+            <h2 class="overview__title">Overview - Today</h2>
+            <div class="overview__grid">
+                <div class="overview__grid_card">
+                    <p class="overview__grid_card-label">Page Views</p>
+                    <img class="overview__grid_card-logo" src="images/icon-facebook.svg" alt="">
+                    <p class="overview__grid_card-number">87</p>
+                    <p class="overview__grid_card-trend up">3%</p>
+                </div>
+                <div class="overview__grid_card">
+                    <p class="overview__grid_card-label">Likes</p>
+                    <img class="overview__grid_card-logo" src="images/icon-facebook.svg" alt="">
+                    <p class="overview__grid_card-number">52</p>
+                    <p class="overview__grid_card-trend down">2%</p>
+                </div>
+                <div class="overview__grid_card">
+                    <p class="overview__grid_card-label">Likes</p>
+                    <img class="overview__grid_card-logo" src="images/icon-instagram.svg" alt="">
+                    <p class="overview__grid_card-number">5462</p>
+                    <p class="overview__grid_card-trend up">2257%</p>
+                </div>
+                <div class="overview__grid_card">
+                    <p class="overview__grid_card-label">Profile Views</p>
+                    <img class="overview__grid_card-logo" src="images/icon-instagram.svg" alt="">
+                    <p class="overview__grid_card-number">52k</p>
+                    <p class="overview__grid_card-trend up">1375%</p>
+                </div>
+                <div class="overview__grid_card">
+                    <p class="overview__grid_card-label">Retweets</p>
+                    <img class="overview__grid_card-logo" src="images/icon-twitter.svg" alt="">
+                    <p class="overview__grid_card-number">117</p>
+                    <p class="overview__grid_card-trend up">303%</p>
+                </div>
+                <div class="overview__grid_card">
+                    <p class="overview__grid_card-label">Likes</p>
+                    <img class="overview__grid_card-logo" src="images/icon-twitter.svg" alt="">
+                    <p class="overview__grid_card-number">507</p>
+                    <p class="overview__grid_card-trend up">553%</p>
+                </div>
+                <div class="overview__grid_card">
+                    <p class="overview__grid_card-label">Likes</p>
+                    <img class="overview__grid_card-logo" src="images/icon-youtube.svg" alt="">
+                    <p class="overview__grid_card-number">107</p>
+                    <p class="overview__grid_card-trend down">19%</p>
+                </div>
+                <div class="overview__grid_card">
+                    <p class="overview__grid_card-label">Total Views</p>
+                    <img class="overview__grid_card-logo" src="images/icon-youtube.svg" alt="">
+                    <p class="overview__grid_card-number">1407</p>
+                    <p class="overview__grid_card-trend down">12%</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="attribution container">
             Challenge by
             <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
-            <a href="#">Your Name Here</a>.
-        </div>
+            <a
+                href="https://github.com/FloRiouffreyt/floriouffreyt.github.io"
+                rel="nofollow"
+                target="_blank">Florent Riouffreyt</a>.
+        </footer>
+
         <script src="script.js"></script>
     </body>
 </html>
