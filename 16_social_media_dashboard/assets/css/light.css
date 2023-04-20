@@ -1,0 +1,12 @@
+@import 'style.css';
+
+:root {
+    --color-font-main: #1d1f29;
+    --color-font-alt-dark: #63687d;
+    --color-font-alt-light: #848bab;
+    
+    --color-bg: #fff;
+    --color-bg-header: #f7f9ff;
+    --color-bg-card: #f1f3fa;
+    --color-bg-card-hover: #E1E4F0;
+}

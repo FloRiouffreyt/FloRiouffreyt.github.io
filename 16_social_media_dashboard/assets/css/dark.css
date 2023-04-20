@@ -1,0 +1,28 @@
+@import 'style.css';
+
+:root {
+    --color-font-main: #fff;
+    --color-font-alt-dark: #8c98c6;
+    --color-font-alt-light: #fff;
+
+    --color-bg: #1d1f29;
+    --color-bg-header: #20222f;
+    --color-bg-card: #252b42;
+    --color-bg-card-hover: #333a55;
+}
+
+.header-switch label {
+    color: var(--color-font-alt-dark);
+}
+
+.header-switch:hover .theme-label {
+    color: var(--color-font-main);
+}
+
+.overview__title {
+    color: var(--color-font-main);
+}
+
+.attribution {
+    color: var(--color-font-alt-dark);
+}
