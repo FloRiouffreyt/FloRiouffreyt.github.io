@@ -321,11 +321,17 @@ main::before {
 /* FOOTER ----------> */
 
 .attribution {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
     font-size: 0.75rem;
     font-weight: 700;
-    text-align: center;
     color: var(--color-LT-font-grey-light);
-    margin-bottom: 1.5rem;
+}
+
+.attribution p {
+    margin-bottom: 1rem;
 }
 
 .attribution a {
@@ -388,5 +394,9 @@ main::before {
 
     .main__grid {
         grid-template-rows: repeat(4, 216px);
+    }
+
+    .attribution {
+        flex-direction: column;
     }
 }
