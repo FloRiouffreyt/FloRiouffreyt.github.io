@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [HERE](https://www.frontendmentor.io/solutions/advice-generator-app-html-css-js-api-5ENSBDlLCG)
+- Live Site URL: [HERE](https://floriouffreyt.github.io/19_advice_generator_app/)
 
 ## My process
 
