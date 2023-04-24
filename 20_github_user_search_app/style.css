@@ -244,7 +244,7 @@ h4 {
 .main__user-card_info_links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px 62px;
+    gap: 18px 62px;
 }
 
 .main__user-card_info_links-item {
