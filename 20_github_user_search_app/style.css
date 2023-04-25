@@ -50,6 +50,15 @@ body {
     background: var(--color-LM-bg-body);
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .container {
     max-width: 730px;
     margin-inline: auto;
@@ -60,6 +69,14 @@ body {
     place-content: center;
     min-height: 100vh;
     grid-template-columns: repeat(1, 730px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.no-info {
+    opacity: .5;
 }
 
 /* TYPO ----------> */
@@ -170,6 +187,11 @@ h4 {
     line-height: 23px;
     color: var(--font-color-btn);
     cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.main__input-btn:hover {
+    background: var(--color-bg-accent-hover);
 }
 
 .main__input-field {
@@ -184,7 +206,14 @@ h4 {
     line-height: 25px;
     color: var(--font-color-LM-darker);
     background: var(--color-LM-bg-card);
+    caret-color: var(--font-color-h3);
 }
+
+.main__input-field:focus,
+.main__input-field:focus-visible {
+    outline: none;
+}
+
 
 /* USER CARD */
 
@@ -199,8 +228,19 @@ h4 {
     grid-template-columns: 117px auto;
 }
 
+.main__user-card_img img {
+    width: 117px;
+    height: 117px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .main__user-card_info_header {
     margin-bottom: 20px;
+}
+
+#username-link {
+    text-decoration-color: var(--font-color-h3);
 }
 
 .main__user-card_info_header-username {
@@ -247,6 +287,10 @@ h4 {
     gap: 18px 62px;
 }
 
+#url-link {
+    text-decoration-color: var(--font-color-LM-light);
+}
+
 .main__user-card_info_links-item {
     font-size: var(--font-fs-body);
     font-weight: var(--font-fw-body);
@@ -265,19 +309,19 @@ h4 {
     left: -32px;
 }
 
-.address::before {
+#address::before {
     content: url(assets/icon-location.svg);
 }
 
-.twitter::before {
+#twitter::before {
     content: url(assets/icon-twitter.svg);
 }
 
-.url::before {
+#url::before {
     content: url(assets/icon-website.svg);
 }
 
-.company::before {
+#company::before {
     content: url(assets/icon-company.svg);
 }
 

@@ -30,45 +30,47 @@
                         d="M10.609 0c5.85 0 10.608 4.746 10.608 10.58 0 2.609-.952 5-2.527 6.847l5.112 5.087a.87.87 0 01-1.227 1.233l-5.118-5.093a10.58 10.58 0 01-6.848 2.505C4.759 21.16 0 16.413 0 10.58 0 4.747 4.76 0 10.609 0zm0 1.74c-4.891 0-8.87 3.965-8.87 8.84 0 4.874 3.979 8.84 8.87 8.84a8.855 8.855 0 006.213-2.537l.04-.047a.881.881 0 01.058-.053 8.786 8.786 0 002.558-6.203c0-4.875-3.979-8.84-8.87-8.84z"
                         fill="#0079ff"/>
 					</svg>
-					<input class="main__input-field" type="text" placeholder="Search GitHub username...">
-                    <p class="main__input-error">No results</p>
+					<input id="input-data" class="main__input-field" type="text" placeholder="Search GitHub username...">
+                    <p class="main__input-error hidden">No results</p>
                     <button class="main__input-btn">Search</button>
                 </div>
 
-                <div class="main__user-card">
+                <div class="main__user-card hidden">
                     <div class="main__user-card_img">
-                        <img src="assets/Bitmap.png" alt="Profile picture">
+                        <img  id="img" src="" alt="Profile picture">
                     </div>
                     <div class="main__user-card_info">
                         <div class="main__user-card_info_header">
                             <div class="main__user-card_info_header-username">
-								<h2>The Octocat</h2>
-								<p>Joined 25 Jan 2011</p>
+								<h2 id="name"></h2>
+								<p id="date"></p>
 							</div>
-							<h3>@octocat</h3>
+							<a id="username-link" href="" rel="nofollow noopener noreferrer" target="_blank">
+                                <h3 id="username"></h3>
+                            </a>
                         </div>
 						<div class="main__user-card_info_bio">
-							<p>This profile has no bio</p>
+							<p id="bio"></p>
 						</div>
                         <div class="main__user-card_info_stats">
                             <div>
                                 <h4>Repos</h4>
-                                <p class="main__user-card_info_stats-number">8</p>
+                                <p id="repos" class="main__user-card_info_stats-number"></p>
                             </div>
                             <div>
                                 <h4>Followers</h4>
-                                <p class="main__user-card_info_stats-number">3938</p>
+                                <p id="followers" class="main__user-card_info_stats-number"></p>
                             </div>
                             <div>
                                 <h4>Following</h4>
-                                <p class="main__user-card_info_stats-number">9</p>
+                                <p id="following" class="main__user-card_info_stats-number"></p>
                             </div>
                         </div>
 						<div class="main__user-card_info_links">
-							<p class="main__user-card_info_links-item address">San Francisco</p>
-							<p class="main__user-card_info_links-item twitter">Not Available</p>
-							<p class="main__user-card_info_links-item url">https://github.blog</p>
-							<p class="main__user-card_info_links-item company">@github</p>
+							<p class="main__user-card_info_links-item" id="address"></p>
+							<p class="main__user-card_info_links-item" id="twitter"></p>
+                            <p class="main__user-card_info_links-item" id="url"></p>
+                            <p class="main__user-card_info_links-item" id="company"></p>
 						</div>
                     </div>
                 </div>
