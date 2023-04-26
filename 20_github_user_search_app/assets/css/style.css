@@ -3,13 +3,11 @@
 :root {
     --font-main:'Space Mono', monospace;
 
-    --font-color-LM-dark: #2b3442;
-    --font-color-LM-darker: #222731;
-    --font-color-LM-light: #4b6a9b;
-    --font-color-LM-x-light: #697c9a;
-    
-    --font-color-DM-light: #fff;
-    --font-color-DM-dark: #90a4da;
+    --font-color-main: #2b3442;
+    --font-color-main-alt: #222731;
+    --font-color-body: #4b6a9b;
+    --font-color-body-alt: #697c9a;
+    --font-color-hover: #222731;
     
     --font-color-btn: #fff;
     --font-color-h3: #0079ff;
@@ -28,12 +26,8 @@
     --font-lh-h4: 20px;
     --font-lh-body: 25px;
 
-    --color-LM-bg-body: #f6f8ff;
-    --color-LM-bg-card: #fefefe;
-    
-    --color-DM-bg-body: #141d2f;
-    --color-DM-bg-card: #1e2a47;
-
+    --color-bg-body: #f6f8ff;
+    --color-bg-card: #fefefe;
     --color-bg-accent: #0079ff;
     --color-bg-accent-hover: #60abff;
 
@@ -47,7 +41,7 @@
 
 body {
     font-family: var(--font-main);
-    background: var(--color-LM-bg-body);
+    background: var(--color-bg-body);
 }
 
 a {
@@ -84,14 +78,14 @@ a:hover {
 ::placeholder {
     font-family: var(--font-main);
     font-size: 18px;
-    color: var(--font-color-LM-light);
+    color: var(--font-color-body);
 }
 
 h1, h2 {
     font-size: var(--font-fs-h1);
     font-weight: var(--font-fw-h1);
     line-height: var(--font-lh-h1);
-    color: var(--font-color-LM-dark);
+    color: var(--font-color-main);
 }
 
 h3 {
@@ -105,7 +99,7 @@ h4 {
     font-size: var(--font-fs-h4);
     font-weight: var(--font-fw-h4);
     line-height: var(--font-lh-h4);
-    color: var(--font-color-LM-light);
+    color: var(--font-color-body);
 }
 
 /* HEADER ----------> */
@@ -119,25 +113,45 @@ h4 {
 }
 
 .header__theme {
-    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header__theme-text ,
+#theme-toggle {
+    transition: all 250ms ease-in-out;
+}
+
+.header__theme-text {
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
     line-height: 19.25px;
     letter-spacing: 2.5px;
-    margin-right: 36px;
-    color: var(--font-color-LM-x-light);
+    color: var(--font-color-body-alt);
     cursor: pointer;
 }
 
-.header__theme::after {
-    content: '';
-    height: 20px;
+.header__theme-text:hover {
+    color: var(--font-color-hover);
+}
+
+#theme-toggle:hover ~ .header__theme-text {
+    color: var(--font-color-hover);
+}
+
+#theme-toggle {
+    appearance: none;
     width: 20px;
-    position: absolute;
-    top: 0;
-    right: -36px;
-    background-image: url(assets/icon-moon.svg);
+    height: 20px;
+    background-image: url(../../assets/icon-moon.svg);
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background-image: url(../../assets/icon-moon-hover.svg);
 }
 
 /* SEARCH INPUT */
@@ -204,8 +218,8 @@ h4 {
     font-size: 18px;
     font-weight: 400;
     line-height: 25px;
-    color: var(--font-color-LM-darker);
-    background: var(--color-LM-bg-card);
+    color: var(--font-color-main-alt);
+    background: var(--color-bg-card);
     caret-color: var(--font-color-h3);
 }
 
@@ -217,7 +231,7 @@ h4 {
 /* USER CARD */
 
 .main__user-card {
-    background: var(--color-LM-bg-card);
+    background: var(--color-bg-card);
     border-radius: 15px;
     box-shadow: var(--box-shadow);
     margin-bottom: 24px;
@@ -255,14 +269,14 @@ h4 {
     font-size: var(--font-fs-body);
     font-weight: var(--font-fw-body);
     line-height: 38px;
-    color: var(--font-color-LM-x-light);
+    color: var(--font-color-body-alt);
 }
 
 .main__user-card_info_bio {
     font-size: var(--font-fs-body);
     font-weight: var(--font-fw-body);
     line-height: 25px;
-    color: var(--font-color-LM-x-light);
+    color: var(--font-color-body-alt);
     margin-bottom: 32px;
 }
 
@@ -270,7 +284,7 @@ h4 {
     margin-bottom: 36px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    background: var(--color-LM-bg-body);
+    background: var(--color-bg-body);
     padding: 15px 32px;
     border-radius: 10px;
 }
@@ -279,7 +293,7 @@ h4 {
     font-size: 22px;
     font-weight: 700;
     line-height: 32px;
-    color: var(--font-color-LM-dark);
+    color: var(--font-color-main);
 }
 
 .main__user-card_info_links {
@@ -289,14 +303,14 @@ h4 {
 }
 
 #url-link {
-    text-decoration-color: var(--font-color-LM-light);
+    text-decoration-color: var(--font-color-body);
 }
 
 .main__user-card_info_links-item {
     font-size: var(--font-fs-body);
     font-weight: var(--font-fw-body);
     line-height: 22px;
-    color: var(--font-color-LM-light);
+    color: var(--font-color-body);
     margin-left: 32px;
     position: relative;
 }
@@ -311,19 +325,19 @@ h4 {
 }
 
 #address::before {
-    content: url(assets/icon-location.svg);
+    content: url(../../assets/icon-location.svg);
 }
 
 #twitter::before {
-    content: url(assets/icon-twitter.svg);
+    content: url(../../assets/icon-twitter.svg);
 }
 
 #url::before {
-    content: url(assets/icon-website.svg);
+    content: url(../../assets/icon-website.svg);
 }
 
 #company::before {
-    content: url(assets/icon-company.svg);
+    content: url(../../assets/icon-company.svg);
 }
 
 /* FOOTER ----------> */
@@ -334,11 +348,11 @@ h4 {
     font-size: .75rem;
     align-items: center;
     justify-content: center;
-    color: var(--font-color-LM-dark);
+    color: var(--font-color-main);
 }
 
 .attribution a {
-    color: var(--font-color-LM-light);
+    color: var(--font-color-body);
     transition: all 200ms ease-in-out;
 }
 
@@ -348,70 +362,3 @@ h4 {
 
 /* MEDIA QUERIES */
 
-@media (prefers-color-scheme: dark) {
-    body {
-        color: var(--font-color-DM-light);
-        background: var(--color-DM-bg-body);
-    }
-
-    h1 {
-        color: var(--font-color-DM-light);
-    }
-    
-    .header__theme {
-        color: var(--font-color-DM-light);
-    }
-    
-    .header__theme::after {
-        background-image: url(assets/icon-sun.svg);
-    }
-
-    ::placeholder {
-        color: var(--font-color-DM-light);
-    }
-
-    .main__input,
-    .main__user-card {
-        box-shadow: none;
-    }
-
-    .main__input-field {
-        color: var(--font-color-DM-light);
-        background: var(--color-DM-bg-card);
-    }
-
-    .main__user-card {
-        background: var(--color-DM-bg-card);
-    }
-    
-    .main__user-card_info_header h2,
-    .main__user-card_info_header p,
-    .main__user-card_info_bio,
-    .main__user-card_info_stats-number {
-        color: var(--font-color-DM-light);
-    }
-
-    h4 {
-        color: var(--font-color-DM-light);
-    }
-
-    .main__user-card_info_stats {
-        background: var(--color-DM-bg-body);
-    }
-    
-    .main__user-card_info_links-item {
-        color: var(--font-color-DM-light);
-    }
-
-    .main__user-card_info_links-item::before {
-        filter: saturate(0%) contrast(0%) brightness(100);
-    }
-    
-    #url-link {
-        text-decoration-color: var(--font-color-DM-light);
-    }
-    
-    .attribution {
-        color: var(--font-color-DM-light);
-    }
-}

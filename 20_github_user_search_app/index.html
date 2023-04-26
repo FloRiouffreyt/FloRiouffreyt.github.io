@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./assets/css/style.css" id="theme-style">
         <link
             rel="icon"
             type="image/png"
@@ -19,7 +19,10 @@
 
             <header class="header container">
                 <h1 class="header__logo">devfinder</h1>
-                <p class="header__theme"></p>
+                <div class="header__theme">
+                    <input type="checkbox" name="theme" id="theme-toggle">
+                    <label for="theme-toggle" class="header__theme-text"></label>
+                </div>
             </header>
 
             <main class="main container">
@@ -89,6 +92,6 @@
 
         </div>
 
-        <script src="script.js"></script>
+        <script defer src="script.js"></script>
     </body>
 </html>

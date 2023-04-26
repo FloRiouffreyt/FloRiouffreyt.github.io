@@ -1,14 +1,30 @@
-const themeColor = document.querySelector('.header__theme');
+const themeStyle = document.querySelector('#theme-style');
+const themeToggle = document.querySelector('#theme-toggle');
+const themeLabel = document.querySelector('.header__theme-text');
 
-themeColor.addEventListener('click', e => {
-    console.log(e);
-})
-
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    themeColor.textContent = 'LIGHT'
-} else {
-    themeColor.textContent = 'DARK'
+function themeSetup() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        themeStyle.attributes.href.value = './assets/css/dark.css'
+        themeLabel.textContent = 'LIGHT'
+        themeToggle.checked = true;
+    } else {
+        themeStyle.attributes.href.value = './assets/css/style.css'
+        themeLabel.textContent = 'DARK';
+        themeToggle.checked = false;
+    }
 }
+
+window.onload = themeSetup()
+
+themeToggle.addEventListener('click', e => {
+    if (themeToggle.checked) {
+        themeStyle.attributes.href.value = './assets/css/dark.css'
+        themeLabel.textContent = 'LIGHT'
+    } else {
+        themeStyle.attributes.href.value = './assets/css/style.css'
+        themeLabel.textContent = 'DARK';
+    }
+})
 
 const inputData = document.querySelector('#input-data');
 const button = document.querySelector('.main__input-btn');
