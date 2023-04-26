@@ -214,7 +214,6 @@ h4 {
     outline: none;
 }
 
-
 /* USER CARD */
 
 .main__user-card {
@@ -241,6 +240,8 @@ h4 {
 
 #username-link {
     text-decoration-color: var(--font-color-h3);
+    display: block;
+    width: max-content;
 }
 
 .main__user-card_info_header-username {
@@ -343,4 +344,74 @@ h4 {
 
 .attribution a:hover {
     color: var(--font-color-h3);
+}
+
+/* MEDIA QUERIES */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--font-color-DM-light);
+        background: var(--color-DM-bg-body);
+    }
+
+    h1 {
+        color: var(--font-color-DM-light);
+    }
+    
+    .header__theme {
+        color: var(--font-color-DM-light);
+    }
+    
+    .header__theme::after {
+        background-image: url(assets/icon-sun.svg);
+    }
+
+    ::placeholder {
+        color: var(--font-color-DM-light);
+    }
+
+    .main__input,
+    .main__user-card {
+        box-shadow: none;
+    }
+
+    .main__input-field {
+        color: var(--font-color-DM-light);
+        background: var(--color-DM-bg-card);
+    }
+
+    .main__user-card {
+        background: var(--color-DM-bg-card);
+    }
+    
+    .main__user-card_info_header h2,
+    .main__user-card_info_header p,
+    .main__user-card_info_bio,
+    .main__user-card_info_stats-number {
+        color: var(--font-color-DM-light);
+    }
+
+    h4 {
+        color: var(--font-color-DM-light);
+    }
+
+    .main__user-card_info_stats {
+        background: var(--color-DM-bg-body);
+    }
+    
+    .main__user-card_info_links-item {
+        color: var(--font-color-DM-light);
+    }
+
+    .main__user-card_info_links-item::before {
+        filter: saturate(0%) contrast(0%) brightness(100);
+    }
+    
+    #url-link {
+        text-decoration-color: var(--font-color-DM-light);
+    }
+    
+    .attribution {
+        color: var(--font-color-DM-light);
+    }
 }
