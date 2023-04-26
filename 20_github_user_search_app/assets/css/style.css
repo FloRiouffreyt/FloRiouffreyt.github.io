@@ -119,11 +119,6 @@ h4 {
     gap: 1rem;
 }
 
-.header__theme-text ,
-#theme-toggle {
-    transition: all 250ms ease-in-out;
-}
-
 .header__theme-text {
     text-transform: uppercase;
     font-size: 13px;
