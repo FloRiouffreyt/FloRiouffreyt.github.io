@@ -1,0 +1,19 @@
+/* FOOTER ----------> */
+
+.attribution {
+    display: flex;
+    gap: .25rem;
+    font-size: .75rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--font-color-body-alt);
+}
+
+.attribution a {
+    color: var(--font-color-body);
+    transition: all 200ms ease-in-out;
+}
+
+.attribution a:hover {
+    color: var(--font-color-h3);
+}
