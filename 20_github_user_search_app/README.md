@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [HERE](https://your-solution-url.com)
+- Solution URL: [HERE](https://www.frontendmentor.io/solutions/github-user-search-app-html-css-js-api-u10ZXwL9cp)
 - Live Site URL: [HERE](https://floriouffreyt.github.io/20_github_user_search_app/)
 
 ## My process
