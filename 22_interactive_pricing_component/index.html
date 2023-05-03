@@ -34,20 +34,20 @@
                                 <p><span id="rate"></span> / month</p>
                             </div>
                             <div class="main__card_slider">
-                                <label></label>
                                 <input
                                     type="range"
                                     id="range-slider"
                                     min="0"
                                     max="100"
                                     step="25"
-                                    value="50">
+                                    value="50"
+                                    aria-label="plan slider">
                             </div>
                             <div class="main__card_billing">
                                 <div class="main__card_billing-option">
-                                    <label>Monthly Billing</label>
-                                    <input type="checkbox" id="billing-check" name="billing">
-                                    <label>Yearly Billing</label>
+                                    <p>Monthly Billing</p>
+                                    <input type="checkbox" id="billing-check" name="billing" aria-label="billing checkbox">
+                                    <p>Yearly Billing</p>
                                 </div>
                                 <div class="main__card_billing-discount">
                                     <p class="discount-text">25% discount</p>
