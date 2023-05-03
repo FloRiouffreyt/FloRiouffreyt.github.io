@@ -10,8 +10,9 @@ var discountRates = rates;
 const discount = 0.75;
 
 function displayPlan(index, value = 'k') {
+    document.documentElement.style.setProperty('--color-bg-slider', 'linear-gradient(90deg, #A4F3EB, #A4F3EB ' + slider.value + '%, #ECF0FB ' + slider.value + '%, #ECF0FB)')
     viewField.textContent = views[index] + value;
-    rateField.textContent = '$' + discountRates[index].toFixed(2);  
+    rateField.textContent = '$' + discountRates[index].toFixed(2);
 }
 
 function valueSwitch() {

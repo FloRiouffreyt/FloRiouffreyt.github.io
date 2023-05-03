@@ -14,11 +14,13 @@
     --color-bg-btn: #293356;
     --color-bg-checkbox: #CFD8EF;
     --color-bg-checkbox-hover: #7AEADF;
-    --color-bg-slider: #A4F3EB;
+    --color-bg-slider: linear-gradient(90deg, #A4F3EB, #A4F3EB 50%, #ECF0FB 50%, #ECF0FB);
     --color-bg-slider-thumb: #10D8C4;
     --color-bg-slider-thumb-active: #24AEA1;
     --color-bg-accent: #FEEDE8;
     --color-bg-border: #ECF0FB;
+
+    
 
     --box-shadow-card: 0px 20px 30px -5px rgba(127, 137, 185, 0.15);
     --box-shadow-btn: 0px 15px 30px rgba(0, 255, 231, 0.6);
@@ -41,6 +43,7 @@ body {
     background-image: url(images/bg-pattern.svg);
     background-repeat: no-repeat;
     background-size: 100% 50%;
+    padding-block: 2rem;
 }
 
 /* HEADER ----------> */
@@ -336,9 +339,6 @@ h2 {
 @media screen and (max-width:650px) {
     body {
         background: var(--color-bg-card);
-    }
-    .global__grid {
-        padding-block: 2rem;
     }
     h1 {
         font-size: 1.25rem;
