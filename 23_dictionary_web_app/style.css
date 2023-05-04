@@ -1,0 +1,43 @@
+
+
+.container {
+    max-width: 736px;
+    margin-inline: auto;
+}
+
+/* HEADER -----------> */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* SEARCHBAR ----------> */
+
+.searchbar {
+    display: flex;
+    position: relative;
+}
+
+.searchbar__input {
+    width: 100%;
+}
+
+.searchbar__btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* RESULTS */
+
+.results__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
