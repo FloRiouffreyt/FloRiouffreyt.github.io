@@ -3,7 +3,8 @@ const searchBtn = document.querySelector('#search-validate');
 const searchError = document.querySelector('.error-text');
 const audioWrapper = document.querySelector('#audio');
 
-const noResult = document.querySelector('#error-message')
+const noResult = document.querySelector('#error-message');
+const resultBlock = document.querySelector('.results');
 
 const resultWord = document.querySelector('#word-result');
 const resultPhonetic = document.querySelector('#word-phonetic');
@@ -24,6 +25,8 @@ function resetDisplay() {
     resultPhonetic.textContent = '';
     resultContent.innerHTML = '';
     resultSources.innerHTML = '';
+    audioWrapper.innerHTML = '';
+    !noResult.classList.contains('hidden') && noResult.classList.add('hidden');
 }
 
 function displayResult(resultData) {
@@ -61,16 +64,18 @@ function displayResult(resultData) {
 
     for(let meaning of resultData.meanings) {
         output += `
-        <div>
-        <h2 class="results__content_part">${meaning.partOfSpeech}</h2>
+        <div class="results__content_block">
+        <div class="results__content_part">
+        <h2 class="results__content_part-text">${meaning.partOfSpeech}</h2>
+        </div>
         <h3 class="results__content-meaning">Meaning</h3>
         <ul class="results__content_list">
         `
         for(let definition of meaning.definitions) {
             output += `
             <li class="results__content_list-item">
-            <p>${definition.definition}</p>
-            ${definition.example !== undefined ? `<p>"${definition.example}"</p>` : ''}
+            <p class="results__content_list-item-definition">${definition.definition}</p>
+            ${definition.example !== undefined ? `<p class="results__content_list-item-example">"${definition.example}"</p>` : ''}
             </li>
             `
             }
@@ -78,7 +83,8 @@ function displayResult(resultData) {
 
         if (meaning.synonyms.length > 0) {
             output += `
-            <p class="results__content_synonyms">Synonyms</p>
+            <div class="results__content_synonyms">
+            <p class="results__content_synonyms-title">Synonyms</p>
             <ul class="results__content_synonyms_list">
             `
             for(let synonym of meaning.synonyms) {
@@ -86,12 +92,13 @@ function displayResult(resultData) {
                 <li class="results__content_synonyms_list-item">${synonym}</li>
                 `
             }
-            output += '</ul>'
+            output += '</ul></div>'
         }
         
         if (meaning.antonyms.length > 0) {
             output += `
-            <p class="results__content_antonyms">Antonyms</p>
+            <div class="results__content_antonyms">
+            <p class="results__content_antonyms-title">Antonyms</p>
             <ul class="results__content_antonyms_list">
             `
             for(let antonym of meaning.antonyms) {
@@ -99,7 +106,7 @@ function displayResult(resultData) {
                 <li class="results__content_antonyms_list-item">${antonym}</li>
                 `
             }
-            output += '</ul>'
+            output += '</ul></div>'
         }
         output += '</div>'
     }
@@ -107,19 +114,22 @@ function displayResult(resultData) {
     resultContent.innerHTML = output;
 
     var sourceOutput = `
-    <p>Source</p>
-    <ul>
+    <p class="results__sources-title">Source</p>
+    <ul class="results__sources_list">
     `;
     for(let source of resultData.sourceUrls) {
         sourceOutput += `
-        <li>
-            <a href="${source}">${source}</a>
+        <li class="results__sources_list-item">
+            <a class="results__sources_list-item-link" href="${source}" rel="nofollow noopener noreferrer" target="_blank">${source}</a>
         </li>
         `
     }
     sourceOutput += '</ul>'
 
     resultSources.innerHTML = sourceOutput;
+
+    
+    resultBlock.classList.remove('hidden');
 }
 
 function getResult(word) {
@@ -163,19 +173,21 @@ function wordResult() {
 searchWord.addEventListener('keydown', e => {
     if (e.key === "Enter") {
         if (searchWord.value === '') {
+            resetDisplay();
             emptyQuery();
             return false;
         } else {
-            wordResult()
+            wordResult();
         }
     }
 })
 
 searchBtn.addEventListener('click', () => {
     if (searchWord.value === '') {
+        resetDisplay();
         emptyQuery();
         return false;
     } else {
-        wordResult()
+        wordResult();
     }
 })
