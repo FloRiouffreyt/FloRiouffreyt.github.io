@@ -1,8 +1,56 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(assets/fonts/inter/Inter-VariableFont_slnt\,wght.ttf);
+}
+@font-face {
+    font-family: 'Lora';
+    src: url(assets/fonts/lora/Lora-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'Inconsolata';
+    src: url(assets/fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf);
+}
 
+:root {
+    --font-main-sans: 'Inter', sans-serif;
+    --font-main-serif: 'Lora', serif;
+    --font-main-mono: 'Inconsolata', monospace;
+
+    --font-color-main: #2d2d2d;
+    --font-color-alt: #757575;
+    --font-color-accent: #a445ed;
+    --font-color-error: #ff5252;
+
+    --color-bg-main: #fff;
+    --color-accent: #a445ed;
+    --color-error: #ff5252;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main-sans);
+}
+
+body {
+    background: var(--color-bg-main);
+}
 
 .container {
     max-width: 736px;
     margin-inline: auto;
+}
+
+.error {
+    border-color: var(--color-error);
+}
+
+.error-text {
+    color: var(--font-color-error);
+}
+
+.hidden {
+    display: none;
 }
 
 /* HEADER -----------> */
@@ -15,16 +63,15 @@ header {
 
 /* SEARCHBAR ----------> */
 
-.searchbar {
-    display: flex;
+.searchbar__top {
     position: relative;
 }
 
-.searchbar__input {
+.searchbar__top_input {
     width: 100%;
 }
 
-.searchbar__btn {
+.searchbar__top_btn {
     position: absolute;
     top: 50%;
     right: 0;
@@ -33,6 +80,8 @@ header {
     background: transparent;
     cursor: pointer;
 }
+
+
 
 /* RESULTS */
 

@@ -31,11 +31,21 @@
 
         <main>
             <div class="searchbar">
-                <input class="searchbar__input" type="text" id="search-input" aria-label="search input">
-                <button class="searchbar__btn" type="submit" id="search-validate">
-                    <img class="searchbar__btn-img" src="assets/images/icon-search.svg" alt="search icon">
-                </button>
+                <div class="searchbar__top">
+					<input class="searchbar__top_input" type="text" id="search-input" aria-label="search input" placeholder="Search for any word...">
+					<button class="searchbar__top_btn" type="submit" id="search-validate">
+						<img class="searchbar__top_btn-img" src="assets/images/icon-search.svg" alt="search icon">
+					</button>
+				</div>
+				<p class="error-text hidden">Whoops, can't be empty...</p>
             </div>
+
+			<div class="error__message hidden" id="error-message">
+				<img class="error__message_img" src="assets/images/sadface.png" alt="sorry face icon">
+				<h2 class="error__message_title">no definitions found</h2>
+				<p class="error__message_text">Sorry pal, we couldn't find definitions for the word you were looking for.
+					You can try the search again at later time or head to the web instead.</p>
+			</div>
 
 			<div class="results">
 				<div class="results__header">
@@ -43,17 +53,7 @@
 						<p id="word-result"></p>
 						<p id="word-phonetic"></p>
 					</div>
-					<div class="results__header_audio">
-						<button class="results__header_audio_btn" id="word-audio-btn">
-							<svg class="results__header_audio_btn-img" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
-								<g fill="#A445ED" fill-rule="evenodd">
-									<circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/>
-									<path d="M29 27v21l21-10.5z"/>
-								</g>
-							</svg>
-						</button>
-						<audio src="" id="word-audio"></audio>
-					</div>
+					<div class="results__header_audio" id="audio"></div>
 				</div>
 				<div class="results__content" id="results-content"></div>
 				<div class="results__sources" id="results-sources"></div>
