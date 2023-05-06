@@ -16,6 +16,7 @@ const resultSources = document.querySelector('#results-sources');
 var previousWord = '';
 
 function emptyQuery() {
+    !resultBlock.classList.contains('hidden') && resultBlock.classList.add('hidden');
     searchWord.classList.add('error');
     searchError.classList.remove('hidden');
 }
@@ -138,6 +139,7 @@ function getResult(word) {
         if (!resp.ok) {
             resetDisplay();
             noResult.classList.remove('hidden');
+            !resultBlock.classList.contains('hidden') && resultBlock.classList.add('hidden');
             previousWord = word;
             return false;
         } else {
@@ -148,11 +150,25 @@ function getResult(word) {
     .then(data => {
 
         const resultData = data[0];
-
+        
+        
         if (resultData === undefined) {
             return false;
         } else {
             displayResult(resultData);
+            const synonyms = document.querySelectorAll('.results__content_synonyms_list-item');
+            const antonyms = document.querySelectorAll('.results__content_antonyms_list-item');
+            
+            for (let synonym of synonyms) {
+                synonym.addEventListener('click', e => {
+                    getResult(e.target.innerText);
+                })
+            }
+            for (let antonym of antonyms) {
+                antonym.addEventListener('click', e => {
+                    getResult(e.target.innerText);
+                })
+            }
         }
     })
 }
@@ -191,3 +207,63 @@ searchBtn.addEventListener('click', () => {
         wordResult();
     }
 })
+
+//font switcher
+const fontBtn = document.querySelector('.header__font');
+const fontName = document.querySelector('.header__font_name');
+const dropdown = document.querySelector('.dropdown');
+fontBtn.addEventListener('click', () => {
+    dropdown.classList.toggle('hidden');
+})
+window.addEventListener('click', e => {
+    if (!e.target.matches('.header__font') && !e.target.matches('.header__font_name')) {
+        dropdown.classList.add('hidden');
+    }
+})
+dropdown.addEventListener('click', e => {
+    if (e.target.id === 'sans-serif') {
+        document.documentElement.style.setProperty("--font-main", "'Inter', sans-serif");
+        fontName.textContent = 'Sans Serif';
+    } else if (e.target.id === 'serif') {
+        document.documentElement.style.setProperty("--font-main", "'Lora', serif")
+        fontName.textContent = 'Serif';
+    } else if (e.target.id === 'monospace') {
+        document.documentElement.style.setProperty("--font-main", "'Inconsolata', monospace")
+        fontName.textContent = 'Mono';
+    }
+})
+
+// theme switch button
+const themeBtn = document.querySelector('#theme');
+const themeIcon = document.querySelector('#theme-icon');
+themeBtn.addEventListener('click', e => {
+    if (e.target.checked) {
+        themeBtn.classList.add('active');
+        themeIcon.classList.add('active-icon');
+        document.documentElement.style.setProperty('--font-color-main', '#fff')
+        document.documentElement.style.setProperty('--color-bg-main', '#050505')
+        document.documentElement.style.setProperty('--color-bg-input', '#1f1f1f')
+        document.documentElement.style.setProperty('--box-shadow', '0px 5px 30px var(--color-accent)')
+    } else {
+        themeBtn.classList.remove('active');
+        themeIcon.classList.remove('active-icon');    
+        document.documentElement.style.setProperty('--font-color-main', '#2d2d2d')
+        document.documentElement.style.setProperty('--color-bg-main', '#fff')
+        document.documentElement.style.setProperty('--color-bg-input', '#f4f4f4')
+        document.documentElement.style.setProperty('--box-shadow', '0px 5px 30px rgba(0, 0, 0, 0.1)')
+    }
+})
+
+function getTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        themeBtn.checked = true;
+        themeBtn.classList.add('active');
+        themeIcon.classList.add('active-icon'); 
+    } else {
+        themeBtn.checked = false;
+        themeBtn.classList.remove('active');
+        themeIcon.classList.remove('active-icon');
+    }
+}
+
+window.onload = getTheme();
