@@ -1,11 +1,11 @@
-buttons = document.querySelectorAll('.btn-rating')
+const buttons = document.querySelectorAll('.btn-rating')
 
-card_content = document.querySelector('.rating_state')
+const cardContent = document.querySelector('.rating_state')
 
-thanks_content = document.querySelector('.rating_thanks')
-thanks_content.style.display='none'
+const thanksContent = document.querySelector('.rating_thanks')
+thanksContent.style.display='none'
 
-result = document.querySelector('#rating_row')
+const result = document.querySelector('#rating_row')
 
 window.addEventListener('click', e => {
     if (e.target.classList.contains('btn-rating')) {
@@ -14,19 +14,13 @@ window.addEventListener('click', e => {
                 buttons[i].classList.remove('active')
             }
         }
-        rating = e.target.value;
+        var rating = e.target.value;
         e.target.classList.add('active');
-    } else {
-        return false;
-    }
-})
-
-window.addEventListener('click', e => {
-    if (e.target.classList.contains('btn-submit')) {
+    } else if (e.target.classList.contains('btn-submit')) {
         for (i=0;i<buttons.length;i++) {
             if (buttons[i].classList.contains('active')) {
-                card_content.style.display='none';
-                thanks_content.style.display='flex';
+                cardContent.style.display='none';
+                thanksContent.style.display='flex';
                 result.innerHTML = `You selected ${rating} out of 5`;
             }
         }

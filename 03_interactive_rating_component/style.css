@@ -14,7 +14,6 @@
 body {
     font-family: var(--font-main);
     color: var(--font-color-main);
-    font-size: 16px;
     background: var(--color-bg);
     display: grid;
     place-items: center;
