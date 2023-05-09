@@ -21,31 +21,79 @@
                     <h1>Password Generator</h1>
                 </header>
 
-                <main>
-                    <div>
-						<input type="text" name="password" id="password" placeholder="P4$5W0rD!" aria-label="password" readonly>
+                <main class="main__card">
+                    
+                    <div class="main__card_password">
+                        <input
+                            class="main__card_password_field"
+                            type="text"
+                            name="password"
+                            id="password"
+                            placeholder="P4$5W0rD!"
+                            aria-label="password"
+                            readonly>
+                        <button class="main__card_password_copy">
+                            <svg width="21" height="24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z"
+                                    fill="#A4FFAF"/>
+                            </svg>
+                        </button>
                     </div>
-					<div>
-						<div>
-							<label>Character Length</label>
-							<p>RANGE STEP HERE</p>
-						</div>
-						<input type="range" name="strength" id="strength" min="0" max="20" value="10" step="2">
-						<div>
-							<input type="checkbox" name="" id="">Include Uppercase Letters
-							<input type="checkbox" name="" id="">Include Lowercase Letters
-							<input type="checkbox" name="" id="">Include Numbers
-							<input type="checkbox" name="" id="">Include Symbols
-						</div>
-						<div>
-							<p>Strength</p>
-							<div>
-								<p>STRENGTH GOES HERE</p>
-								<div>STRENGTH ICON GOES HERE</div>
-							</div>
-						</div>
-						<button>Generate</button>
-					</div>
+
+                    <div class="main__card_generator">
+                        <div class="main__card_generator_range">
+                            <label for="strength" class="main__card_generator_range-label">Character Length</label>
+                            <p class="main__card_generator_range-steps" id="strength-value"></p>
+                        </div>
+                        <input
+                            class="main__card_generator_range-input"
+                            type="range"
+                            name="strength"
+                            id="strength"
+                            min="0"
+                            max="20"
+                            value="10"
+                            step="1">
+                        <div class="main__card_generator_options">
+                            <div class="main__card_generator_options_line">
+                                <input type="checkbox" name="upperc" id="upperc" checked>
+                                <label for="upperc">Include Uppercase Letters</label>
+                            </div>
+                            <div class="main__card_generator_options_line">
+                                <input type="checkbox" name="lowerc" id="lowerc" checked>
+                                <label for="lowerc">Include Lowercase Letters</label>
+                            </div>
+                            <div class="main__card_generator_options_line">
+                                <input type="checkbox" name="num" id="num" checked>
+                                <label for="num">Include Numbers</label>
+                            </div>
+                            <div class="main__card_generator_options_line">
+                                <input type="checkbox" name="symb" id="symb" checked>
+                                <label for="symb">Include Symbols</label>
+                            </div>
+                        </div>
+                        <div class="main__card_generator_strength">
+                            <p class="main__card_generator_strength-title">Strength</p>
+                            <div class="main__card_generator_strength_level">
+                                <p class="main__card_generator_strength_level-name">MEDIUM</p>
+                                <div class="main__card_generator_strength_level-bars medium">
+                                    <span class="level-bars"></span>
+                                    <span class="level-bars"></span>
+                                    <span class="level-bars"></span>
+                                    <span class="level-bars"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="main__card_generator_submit"><span class="main__card_generator_submit-text">Generate</span>
+                            <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill="#24232C"
+                                    d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
+                            </svg>
+                        </button>
+                    </div>
+
                 </main>
 
                 <footer class="attribution">
@@ -53,12 +101,16 @@
                         <a
                             href="https://www.frontendmentor.io?ref=challenge"
                             rel="noopener noreferrer nofollow"
-                            target="_blank">Frontend Mentor</a>.</p>
+                            target="_blank">
+                        Frontend Mentor</a>.
+                    </p>
                     <p>Coded by
                         <a
                             href="https://github.com/FloRiouffreyt/floriouffreyt.github.io"
                             rel="noopener noreferrer nofollow"
-                            target="_blank">Florent Riouffreyt</a>.</p>
+                            target="_blank">
+                        Florent Riouffreyt</a>.
+                    </p>
                 </footer>
             </div>
         </div>
