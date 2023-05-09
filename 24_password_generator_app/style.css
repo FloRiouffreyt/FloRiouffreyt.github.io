@@ -10,7 +10,7 @@
     --color-bg-main: #18171f;
     --color-bg-card: #24232C;
     --color-bg-accent: #a4ffaf;
-    --color-bg-slider: linear-gradient(90deg, #a4ffaf, #a4ffaf 50%, #18171f 50%, #18171f);
+    --color-bg-slider: linear-gradient(90deg, #a4ffaf, #a4ffaf 60%, #18171f 60%, #18171f);
 
     --color-tooWeak: #f64a4a;
     --color-weak: #fb7c58;
@@ -49,6 +49,10 @@ body {
     color: var(--font-color-dark);
 }
 
+.hidden {
+    display: none !important;
+}
+
 /* HEADER ----------> */
 
 h1 {
@@ -69,6 +73,7 @@ h1 {
 }
 
 .main__card_password {
+    position: relative;
     background: var(--color-bg-card);
     display: flex;
     align-items: center;
@@ -95,6 +100,17 @@ h1 {
 
 .main__card_password_copy:hover > svg path {
     fill: var(--font-color-main);
+}
+
+.main__card_password_copy_alert {
+    position: absolute;
+    top: 50%;
+    right: 4.5rem;
+    transform: translateY(-50%);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--font-color-accent);
+    text-transform: uppercase;
 }
 
 /* GENERATOR RANGE ----------> */
@@ -258,6 +274,7 @@ h1 {
     font-size: 1.5rem;
     font-weight: 700;
     text-align: end;
+    text-transform: uppercase;
 }
 
 .main__card_generator_strength_level-bars {
