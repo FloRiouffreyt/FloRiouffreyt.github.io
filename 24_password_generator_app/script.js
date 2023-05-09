@@ -91,7 +91,6 @@ submit.addEventListener('click', () => {
 })
 
 passwordCopy.addEventListener('click', () => {
-    console.log(passwordField.value);
     if (passwordField.value === '') {
         return false;
     } else {

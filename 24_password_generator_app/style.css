@@ -56,7 +56,7 @@ body {
 /* HEADER ----------> */
 
 h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--font-color-alt);
     text-align: center;
@@ -359,4 +359,22 @@ h1 {
 
 .attribution a:hover {
     color: var(--font-color-accent);
+}
+
+@media screen and (max-width:768px) {
+    * {
+        font-size: 14px;
+    }
+    .main__wrapper {
+        max-width: 343px;
+        margin-inline: auto;
+        padding-block: 2rem;
+    }
+    .main__card_password,
+    .main__card_generator {
+        padding-inline: 1.143rem;
+    }
+    .attribution {
+        flex-direction: column;
+    }
 }
