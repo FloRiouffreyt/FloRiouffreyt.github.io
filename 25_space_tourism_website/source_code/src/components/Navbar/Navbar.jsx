@@ -22,7 +22,7 @@ const Navbar = () => {
         <>
             <ul className='navbar__list'>
                 <li className='navbar__list_item'>
-                    <Link to="/" className='navbar__list_item-link navbar__active'>
+                    <Link to="/" className='navbar__list_item-link'>
                         <span>00</span>home
                     </Link>
                 </li>

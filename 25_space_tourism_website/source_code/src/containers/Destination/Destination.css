@@ -12,8 +12,8 @@
     display: grid;
     grid-template-columns: repeat(2, 450px);
     max-width: 1110px;
-    margin-top: 4.75rem;
     margin-inline: auto;
+    margin-bottom: 7.5rem;
     gap: 4rem 9.75rem;
 }
 
