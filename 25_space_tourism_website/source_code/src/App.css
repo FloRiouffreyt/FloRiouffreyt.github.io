@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+    color: rgba(var(--font-color-main));
+}
+
+body {
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
