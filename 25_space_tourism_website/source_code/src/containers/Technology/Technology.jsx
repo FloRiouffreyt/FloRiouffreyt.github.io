@@ -30,9 +30,7 @@ const Technology = () => {
                         Fugiat, nam provident, eos tenetur facilis, deleniti culpa nobis nisi dolorum
                         reiciendis odit.</p>
                 </div>
-                <div>
-                    <img src={techImg} alt=""/>
-                </div>
+                <img className='technology__img' src={techImg} alt=""/>
             </div>
         </div>
     )

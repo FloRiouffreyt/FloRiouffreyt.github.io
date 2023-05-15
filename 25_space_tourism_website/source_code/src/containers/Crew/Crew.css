@@ -1,11 +1,24 @@
 .crew {
-    display: grid;
-    place-content: end center;
+    display: flex;
+    flex: 1;
+    margin-top: 4.75rem;
+}
+
+.crew::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(11, 13, 23, .50);
+    z-index: -1;
 }
 
 .crew__grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
+    width: 100%;
     max-width: 1110px;
     margin-inline: auto;
     gap: 0 5rem;
@@ -14,6 +27,7 @@
 .crew__title {
     font-size: 1.75rem;
     font-weight: 400;
+    letter-spacing: 4.72px;
     text-transform: uppercase;
 }
 
@@ -26,6 +40,9 @@
 .crew__img {
     grid-row: 1/3;
     grid-column: 2/3;
+    margin-inline: auto;
+    margin-top: auto;
+    height: 100%;
 }
 
 .crew__content {

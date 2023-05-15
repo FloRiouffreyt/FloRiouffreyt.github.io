@@ -1,10 +1,15 @@
+.home {
+    display: flex;
+    flex: 1;
+    margin-bottom: 8.25rem;
+}
+
 .home__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    place-content: center;
+    width: 100%;
     max-width: 1110px;
     margin-inline: auto;
-    margin-bottom: 8.25rem;
 }
 
 .home__grid_content {

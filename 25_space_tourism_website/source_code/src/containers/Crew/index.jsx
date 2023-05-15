@@ -16,9 +16,7 @@ const Crew = () => {
                 <h1 className='crew__title'>
                     <span>02</span>meet your crew</h1>
 
-                <div className='crew__img'>
-                    <img src={imgCrew} alt=""/>
-                </div>
+                <img className='crew__img' src={imgCrew} alt=""/>
 
                 <div className='crew__content'>
                     <h2 className='crew__content_role'>commander</h2>

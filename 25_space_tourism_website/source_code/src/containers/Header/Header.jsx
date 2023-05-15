@@ -31,6 +31,7 @@ const Header = () => {
                 </svg>
             </div>
             </Link>
+            <div className='header__decoration'></div>
             <div className='header__navbar'>
                 <Navbar />
             </div>
