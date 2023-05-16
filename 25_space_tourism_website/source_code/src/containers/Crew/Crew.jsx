@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react'
 import './Crew.css'
 
-import bgCrew from '../../assets/crew/background-crew-desktop.jpg'
-import imgCrew from '../../assets/crew/image-douglas-hurley.webp'
+import bgCrew from '/assets/crew/background-crew-desktop.jpg'
 
 const Crew = () => {
 
@@ -16,7 +15,7 @@ const Crew = () => {
                 <h1 className='crew__title'>
                     <span>02</span>meet your crew</h1>
 
-                <img className='crew__img' src={imgCrew} alt=""/>
+                <img className='crew__img' src='' alt="crew image"/>
 
                 <div className='crew__content'>
                     <h2 className='crew__content_role'>commander</h2>

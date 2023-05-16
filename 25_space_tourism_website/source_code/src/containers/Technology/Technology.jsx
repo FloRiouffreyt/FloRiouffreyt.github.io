@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react'
 import './Technology.css'
 
-import bgTech from '../../assets/technology/background-technology-desktop.jpg'
-import techImg from '../../assets/technology/image-launch-vehicle-portrait.jpg'
+import bgTech from '/assets/technology/background-technology-desktop.jpg'
 
 const Technology = () => {
 
@@ -30,7 +29,7 @@ const Technology = () => {
                         Fugiat, nam provident, eos tenetur facilis, deleniti culpa nobis nisi dolorum
                         reiciendis odit.</p>
                 </div>
-                <img className='technology__img' src={techImg} alt=""/>
+                <img className='technology__img' src='' alt="Technology image"/>
             </div>
         </div>
     )

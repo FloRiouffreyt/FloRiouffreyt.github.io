@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './Destination.css'
 
-import bgDestination from '../../assets/destination/background-destination-desktop.jpg'
+import bgDestination from '/assets/destination/background-destination-desktop.jpg'
 
 const Destination = () => {
     
