@@ -1,12 +1,39 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import './Technology.css'
 
 import bgTech from '/assets/technology/background-technology-desktop.jpg'
 
 const Technology = () => {
 
+    const tabs = document.querySelectorAll('.technology__slider_btn')
+    const [tech, setTech] = useState();
+
+    const getData = i => {
+        fetch('data.json')
+        .then(resp => {
+            return resp.json()
+        })
+        .then(myData => {
+            setTech(myData.technology[i])
+        })
+    }
+
+    useEffect(() => {
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                for (let i = 0; i < tabs.length; i++) {
+                    if (tabs[i].classList.contains('technology__active')) {
+                        tabs[i].classList.remove('technology__active')
+                    }
+                }
+            tab.classList.add('technology__active')
+            })
+        })
+    }, [tabs]);
+
     useEffect(() => {
         document.body.style.backgroundImage = `url(${bgTech})`
+        getData(0)
     }, []);
 
     return (
@@ -15,21 +42,16 @@ const Technology = () => {
                 <h1 className='technology__title'>
                     <span>03</span>space launch 101</h1>
                 <div className='technology__slider'>
-                    <div className='technology__slider_btn btn-active'>1</div>
-                    <div className='technology__slider_btn'>2</div>
-                    <div className='technology__slider_btn'>3</div>
+                    <div onClick={() => getData(0)} className='technology__slider_btn technology__active'>1</div>
+                    <div onClick={() => getData(1)} className='technology__slider_btn'>2</div>
+                    <div onClick={() => getData(2)} className='technology__slider_btn'>3</div>
                 </div>
                 <div className='technology__content'>
                     <h2 className='technology__content_title'>the terminology...</h2>
-                    <h3 className='technology__content_name'>launch vehicle</h3>
-                    <p className='technology__content_text'>Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Aspernatur explicabo commodi ad sint magni unde nostrum
-                        incidunt obcaecati quas sed laborum accusamus omnis cumque atque ab itaque,
-                        asperiores suscipit deserunt qui doloribus maxime dolores quisquam maiores modi.
-                        Fugiat, nam provident, eos tenetur facilis, deleniti culpa nobis nisi dolorum
-                        reiciendis odit.</p>
+                    {tech && <h3 className='technology__content_name'>{tech.name}</h3>}
+                    {tech && <p className='technology__content_text'>{tech.description}</p>}
                 </div>
-                <img className='technology__img' src='' alt="Technology image"/>
+                {tech && <img className='technology__img' src={tech.images.portrait} alt="Technology image"/>}
             </div>
         </div>
     )

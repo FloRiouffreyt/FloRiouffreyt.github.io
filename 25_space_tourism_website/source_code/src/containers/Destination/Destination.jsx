@@ -44,7 +44,7 @@ const Destination = () => {
                     pick your destination</h1>
 
                 <div className='destination__image'>
-                    {data && <img src={data.images.webp} alt=""/>}
+                    {data && <img src={data.images.webp} alt="planet image"/>}
                 </div>
 
                 <div className='destination__content'>

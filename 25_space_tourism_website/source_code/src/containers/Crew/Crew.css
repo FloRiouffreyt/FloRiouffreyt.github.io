@@ -18,6 +18,7 @@
 .crew__grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
+    grid-template-rows: 154px auto;
     width: 100%;
     max-width: 1110px;
     margin-inline: auto;
@@ -83,4 +84,27 @@
 .crew__content_slider {
     margin-top: auto;
     margin-bottom: 5.75rem;
+}
+
+.crew__content_slider_list {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    padding: 0;
+}
+
+.crew__content_slider_list-item {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(var(--color-bg-btn), .17);
+    cursor: pointer;
+}
+
+.crew__content_slider_list-item:hover {
+    background-color: rgba(var(--color-bg-btn), .5);
+}
+
+.crew__active {
+    background-color: rgba(var(--color-bg-btn)) !important;
 }

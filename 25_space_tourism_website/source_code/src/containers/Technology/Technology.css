@@ -50,15 +50,21 @@
     color: var(--font-color-main);
 }
 
-.btn-active {
-    background: rgba(var(--color-bg-btn));
-    color: var(--font-color-btn);
+.technology__slider_btn:hover {
+    outline: 1px solid rgba(var(--color-bg-btn));
+}
+
+.technology__active {
+    background: rgba(var(--color-bg-btn)) !important;
+    color: var(--font-color-btn) !important;
+    outline: none !important;
 }
 
 .technology__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 6.75rem;
     margin-right: 8.125rem;
 }
 
