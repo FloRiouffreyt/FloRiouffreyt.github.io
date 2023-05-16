@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import './Home.css'
 
-import bgHome from '../../assets/img/home/background-home-desktop.jpg'
+import bgHome from '../../assets/home/background-home-desktop.jpg'
 
 const Home = () => {
 

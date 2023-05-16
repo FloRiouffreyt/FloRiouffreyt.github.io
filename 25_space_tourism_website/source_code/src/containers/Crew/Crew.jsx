@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 import './Crew.css'
 
-import bgCrew from '../../assets/img/crew/background-crew-desktop.jpg'
-import imgCrew from '../../assets/img/crew/image-douglas-hurley.webp'
+import bgCrew from '../../assets/crew/background-crew-desktop.jpg'
+import imgCrew from '../../assets/crew/image-douglas-hurley.webp'
 
 const Crew = () => {
 

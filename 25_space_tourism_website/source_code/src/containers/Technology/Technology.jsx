@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 import './Technology.css'
 
-import bgTech from '../../assets/img/technology/background-technology-desktop.jpg'
-import techImg from '../../assets/img/technology/image-launch-vehicle-portrait.jpg'
+import bgTech from '../../assets/technology/background-technology-desktop.jpg'
+import techImg from '../../assets/technology/image-launch-vehicle-portrait.jpg'
 
 const Technology = () => {
 

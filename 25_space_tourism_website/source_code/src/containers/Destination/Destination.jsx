@@ -1,10 +1,26 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import './Destination.css'
 
-import bgDestination from '../../assets/img/destination/background-destination-desktop.jpg'
-import planetImg from '../../assets/img/destination/image-moon.webp'
+import bgDestination from '../../assets/destination/background-destination-desktop.jpg'
 
 const Destination = () => {
+    
+    const [data, setData] = useState();
+
+    const getData = () => {
+        fetch('data.json')
+        .then(resp => {
+            return resp.json()
+        })
+        .then(myData => {
+            console.log(myData.destinations);
+            setData(myData.destinations)
+        })
+    }
+        
+    useEffect(() => {
+        getData()
+    }, []);
 
     useEffect(() => {
         document.body.style.backgroundImage = `url(${bgDestination})`
@@ -18,7 +34,7 @@ const Destination = () => {
                     pick your destination</h1>
 
                 <div className='destination__image'>
-                    <img src={planetImg} alt=""/>
+                    {data && data.length>0 && <img src={data[0].images.webp} alt=""/>}
                 </div>
 
                 <div className='destination__content'>
@@ -28,18 +44,16 @@ const Destination = () => {
                         <li className='destination__content_nav_item'>europa</li>
                         <li className='destination__content_nav_item'>titan</li>
                     </ul>
-                    <h2 className='destination__content_name'>PLANET</h2>
-                    <p className='destination__content_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus
-                        iusto pariatur dolor cum accusantium voluptatem minus officia amet impedit,
-                        consequuntur distinctio incidunt eveniet nostrum?</p>
+                    {data && data.length>0 && <h2 className='destination__content_name'>{data[0].name}</h2>}
+                    {data && data.length>0 && <p className='destination__content_text'>{data[0].description}</p>}
                     <div className='destination__content_numbers'>
                         <div className='destination__content_numbers_distance'>
                             <p className='destination__content_numbers_distance_text'>avg. distance</p>
-                            <p className='destination__content_numbers_distance_numbers'>x km</p>
+                            {data && data.length>0 && <p className='destination__content_numbers_distance_numbers'>{data[0].distance}</p>}
                         </div>
                         <div className='destination__content_numbers_time'>
                             <p className='destination__content_numbers_time_text'>est. travel time</p>
-                            <p className='destination__content_numbers_time_numbers'>X days</p>
+                            {data && data.length>0 && <p className='destination__content_numbers_time_numbers'>{data[0].travel}</p>}
                         </div>
                     </div>
                 </div>

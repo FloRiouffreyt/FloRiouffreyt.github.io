@@ -1,5 +1,5 @@
 export {default as Header} from './Header/Header'
 export {default as Home} from './Home/Home'
 export {default as Destination} from './Destination/Destination'
-export {default as Crew} from './Crew/'
+export {default as Crew} from './Crew/Crew'
 export {default as Technology} from './Technology/Technology'
