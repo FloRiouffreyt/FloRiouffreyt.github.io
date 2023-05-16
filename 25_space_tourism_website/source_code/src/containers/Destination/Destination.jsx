@@ -5,25 +5,35 @@ import bgDestination from '../../assets/destination/background-destination-deskt
 
 const Destination = () => {
     
+    const tabs = document.querySelectorAll('.destination__content_nav_item')
     const [data, setData] = useState();
 
-    const getData = () => {
+    const getData = i => {
         fetch('data.json')
         .then(resp => {
             return resp.json()
         })
         .then(myData => {
-            console.log(myData.destinations);
-            setData(myData.destinations)
+            setData(myData.destinations[i])
         })
     }
-        
+
     useEffect(() => {
-        getData()
-    }, []);
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                for (let i = 0; i < tabs.length; i++) {
+                    if (tabs[i].classList.contains('destination__active')) {
+                        tabs[i].classList.remove('destination__active')
+                    }
+                }
+            tab.classList.add('destination__active')
+            })
+        })
+    }, [tabs]);
 
     useEffect(() => {
         document.body.style.backgroundImage = `url(${bgDestination})`
+        getData(0)
     }, []);
 
     return (
@@ -34,26 +44,26 @@ const Destination = () => {
                     pick your destination</h1>
 
                 <div className='destination__image'>
-                    {data && data.length>0 && <img src={data[0].images.webp} alt=""/>}
+                    {data && <img src={data.images.webp} alt=""/>}
                 </div>
 
                 <div className='destination__content'>
                     <ul className='destination__content_nav'>
-                        <li className='destination__content_nav_item destination__active'>moon</li>
-                        <li className='destination__content_nav_item'>mars</li>
-                        <li className='destination__content_nav_item'>europa</li>
-                        <li className='destination__content_nav_item'>titan</li>
+                        <li onClick={() => getData(0)} id='moon' className='destination__content_nav_item destination__active'>moon</li>
+                        <li onClick={() => getData(1)} id='mars' className='destination__content_nav_item'>mars</li>
+                        <li onClick={() => getData(2)} id='europa' className='destination__content_nav_item'>europa</li>
+                        <li onClick={() => getData(3)} id='titan' className='destination__content_nav_item'>titan</li>
                     </ul>
-                    {data && data.length>0 && <h2 className='destination__content_name'>{data[0].name}</h2>}
-                    {data && data.length>0 && <p className='destination__content_text'>{data[0].description}</p>}
+                    {data && <h2 className='destination__content_name'>{data.name}</h2>}
+                    {data && <p className='destination__content_text'>{data.description}</p>}
                     <div className='destination__content_numbers'>
                         <div className='destination__content_numbers_distance'>
                             <p className='destination__content_numbers_distance_text'>avg. distance</p>
-                            {data && data.length>0 && <p className='destination__content_numbers_distance_numbers'>{data[0].distance}</p>}
+                            {data && <p className='destination__content_numbers_distance_numbers'>{data.distance}</p>}
                         </div>
                         <div className='destination__content_numbers_time'>
                             <p className='destination__content_numbers_time_text'>est. travel time</p>
-                            {data && data.length>0 && <p className='destination__content_numbers_time_numbers'>{data[0].travel}</p>}
+                            {data && <p className='destination__content_numbers_time_numbers'>{data.travel}</p>}
                         </div>
                     </div>
                 </div>

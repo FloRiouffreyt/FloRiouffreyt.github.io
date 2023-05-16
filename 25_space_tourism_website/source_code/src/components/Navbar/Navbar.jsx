@@ -7,7 +7,7 @@ const Navbar = () => {
     useEffect(() => {
         const links = document.querySelectorAll('.navbar__list_item-link');
         links.forEach(link => {
-            link.addEventListener('click', e => {
+            link.addEventListener('click', () => {
                 for (let i = 0; i < links.length; i++) {
                     if (links[i].classList.contains('navbar__active')) {
                         links[i].classList.remove('navbar__active')
