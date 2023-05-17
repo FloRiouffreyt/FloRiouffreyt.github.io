@@ -14,6 +14,7 @@
     background-image: url(./technology/background-technology-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: black;
     z-index: -1;
 }
 
