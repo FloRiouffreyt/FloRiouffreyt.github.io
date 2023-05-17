@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './Technology.css'
 
-import bgTech from '/assets/technology/background-technology-desktop.jpg'
-
 const Technology = () => {
 
     const tabs = document.querySelectorAll('.technology__slider_btn')
@@ -32,7 +30,6 @@ const Technology = () => {
     }, [tabs]);
 
     useEffect(() => {
-        document.body.style.backgroundImage = `url(${bgTech})`
         getData(0)
     }, []);
 

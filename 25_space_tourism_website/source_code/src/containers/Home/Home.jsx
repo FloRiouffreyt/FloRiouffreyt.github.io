@@ -2,13 +2,9 @@ import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import './Home.css'
 
-import bgHome from '/assets/home/background-home-desktop.jpg'
-
 const Home = () => {
 
     useEffect(() => {
-        document.body.style.backgroundImage = `url(${bgHome})`
-
         const links = document.querySelectorAll('.navbar__list_item-link');
         const exploreBtn = document.querySelector('.home__grid_explore-btn');
         exploreBtn.addEventListener('click', () => {

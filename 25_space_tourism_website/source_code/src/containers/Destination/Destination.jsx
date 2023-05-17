@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './Destination.css'
 
-import bgDestination from '/assets/destination/background-destination-desktop.jpg'
-
 const Destination = () => {
     
     const tabs = document.querySelectorAll('.destination__content_nav_item')
@@ -32,7 +30,6 @@ const Destination = () => {
     }, [tabs]);
 
     useEffect(() => {
-        document.body.style.backgroundImage = `url(${bgDestination})`
         getData(0)
     }, []);
 

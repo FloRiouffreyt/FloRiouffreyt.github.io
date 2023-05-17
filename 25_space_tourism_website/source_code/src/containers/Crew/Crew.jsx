@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './Crew.css'
 
-import bgCrew from '/assets/crew/background-crew-desktop.jpg'
-
 const Crew = () => {
 
     const tabs = document.querySelectorAll('.crew__content_slider_list-item')
@@ -32,7 +30,6 @@ const Crew = () => {
     }, [tabs]);
     
     useEffect(() => {
-        document.body.style.backgroundImage = `url(${bgCrew})`
         getData(0)
     }, []);
 

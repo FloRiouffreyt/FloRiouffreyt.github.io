@@ -11,7 +11,9 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(11, 13, 23, .50);
+    background-image: url(./assets/crew/background-crew-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: -1;
 }
 
@@ -30,6 +32,7 @@
     font-weight: 400;
     letter-spacing: 4.72px;
     text-transform: uppercase;
+    animation: 2s ease-in title-appear;
 }
 
 .crew__title span {
@@ -44,6 +47,18 @@
     margin-inline: auto;
     margin-top: auto;
     height: 100%;
+    animation: 3s ease-in-out img-slide-right;
+}
+
+@keyframes img-slide-right {
+    from {
+        opacity: 0;
+        transform: translateX(10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .crew__content {
@@ -64,12 +79,14 @@
     font-size: 2rem;
     color: rgba(var(--font-color-main), .5);
     margin-bottom: 1rem;
+    animation: 1s ease-in title-appear;
 }
 
 .crew__content_name {
     font-size: 3.5rem;
     margin-bottom: 1.75rem;
     white-space: nowrap;
+    animation: 2s ease-in title-appear;
 }
 
 .crew__content_text {
@@ -79,6 +96,7 @@
     line-height: 2rem;
     color: var(--font-color-alt);
     max-width: 450px;
+    animation: 3s ease-in title-appear;
 }
 
 .crew__content_slider {
