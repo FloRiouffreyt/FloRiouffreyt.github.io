@@ -11,7 +11,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url(./assets/destination/background-destination-desktop.jpg);
+    background-image: url(./destination/background-destination-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
