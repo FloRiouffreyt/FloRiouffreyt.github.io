@@ -37,3 +37,9 @@
     background: rgba(255, 255, 255, .04);
     backdrop-filter: blur(80px);
 }
+
+@media screen and (max-width: 1180px) {
+    .header__decoration {
+        display: none;
+    }
+}

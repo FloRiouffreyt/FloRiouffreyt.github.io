@@ -82,6 +82,7 @@
     justify-content: flex-start;
     margin-top: 6.75rem;
     margin-right: 8.125rem;
+    width: 445px;
 }
 
 .technology__content_title {
@@ -98,6 +99,7 @@
     font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 1.125rem;
+    white-space: nowrap;
     animation: 3s ease-in title-appear;
 }
 

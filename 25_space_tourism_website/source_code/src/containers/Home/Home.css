@@ -121,3 +121,27 @@
 .home__grid_explore-btn:hover.home__grid_explore-btn::after {
     transform: translateY(-50%) translateX(-50%) scale(1.65);
 }
+
+@media screen and (max-width: 1180px) {
+    .home {
+        margin-bottom: 0;
+    }
+    .home::before {
+        background-image: url(./home/background-home-tablet.jpg);
+    }
+    .home__grid {
+        grid-template-columns: repeat(1, auto);
+        margin-top: 6.625rem;
+        gap: 9.75rem;
+    }
+    .home__grid_content {
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+    }
+    .home__grid_explore {
+        align-items: flex-start;
+        justify-content: center;
+        margin-bottom: 5.625rem;
+    }
+}
