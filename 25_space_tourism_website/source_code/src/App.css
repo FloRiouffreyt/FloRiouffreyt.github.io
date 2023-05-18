@@ -17,6 +17,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
+    overflow-x: hidden;
 }
 
 a {
