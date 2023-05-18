@@ -86,7 +86,7 @@
 
 @media screen and (max-width:650px) {
     .header__logo {
-        padding-top: 1.5rem;
+        padding: 1.5rem;
     }
     .header__navbar {
         display: none;

@@ -173,3 +173,98 @@
     color: var(--font-color-main);
     text-transform: uppercase;
 }
+
+@media screen and (max-width: 1180px) {
+    .root_destination {
+        background-image: url(./destination/background-destination-tablet.jpg);
+    }
+    .destination {
+        margin-block: 2.5rem 0;
+    }
+    .destination__grid {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(3, 0fr);
+        gap: 0;
+    }
+    .destination__title {
+        font-size: 1.25rem;
+        letter-spacing: 3.4px;
+        padding-inline: 2.375rem;
+        grid-column: 1/2;
+        margin-bottom: 3.75rem;
+    }
+    .destination__title span {
+        margin-right: 1.125rem;
+    }
+    .destination__image {
+        margin-bottom: 3.25rem;
+    }
+    .destination__image img {
+        height: 300px;
+        width: 300px;
+    }
+    .destination__content {
+        text-align: center;
+    }
+    .destination__content_nav {
+        justify-content: center;
+        margin-bottom: 2rem;
+        font-size: 1rem;
+    }
+    .destination__content_name {
+        font-size: 5rem;
+        margin-bottom: .5rem;
+    }
+    .destination__content_text {
+        margin-inline: auto;
+        margin-bottom: 3rem;
+        max-width: 575px;
+    }
+    .destination__content_numbers {
+        margin-inline: auto;
+        justify-content: center;
+        width: 100%;
+        max-width: 575px;
+        margin-bottom: 3.875rem;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .root_destination {
+        background-image: url(./destination/background-destination-mobile.jpg);
+    }
+    .destination__title {
+        font-size: 1rem;
+        letter-spacing: 2.7px;
+        margin-inline: auto;
+        margin-bottom: 2rem;
+    }
+    .destination__image {
+        margin-bottom: 1.625rem;
+    }
+    .destination__image img {
+        height: 170px;
+        width: 170px;
+    }
+    .destination__content_nav {
+        font-size: .875rem;
+        gap: 1.625rem;
+    }
+    .destination__content_name {
+        font-size: 3.5rem;
+    }
+    .destination__content_text {
+        font-size: .938rem;
+        line-height: 1.5rem;
+        padding-inline: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .destination__content_numbers {
+        flex-direction: column;
+        gap: 2rem;
+        margin-inline: 1.5rem;
+        padding-top: 2rem;
+        width: auto;
+        margin-bottom: 3.625rem;
+    }
+}
