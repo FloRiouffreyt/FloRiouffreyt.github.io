@@ -1,21 +1,14 @@
-.destination {
-    display: flex;
-    flex: 1;
-    margin-block: 4.75rem 7rem;
-}
-
-.destination::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+.root_destination {
     background-image: url(./destination/background-destination-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
-    z-index: -1;
+}
+
+.destination {
+    display: flex;
+    flex: 1;
+    margin-block: 4.75rem 7rem;
 }
 
 .destination__active {
