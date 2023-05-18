@@ -226,6 +226,9 @@
     .root_destination {
         background-image: url(./destination/background-destination-mobile.jpg);
     }
+    .destination {
+        margin-block: 1.5rem 0;
+    }
     .destination__title {
         font-size: 1rem;
         letter-spacing: 2.7px;
