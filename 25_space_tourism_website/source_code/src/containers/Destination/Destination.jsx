@@ -29,7 +29,13 @@ const Destination = () => {
         })
     }, [tabs]);
 
+    function setRootClass() {
+        document.querySelector('#root').className = ''
+        document.querySelector('#root').classList.add('root_destination')
+    }
+
     useEffect(() => {
+        setRootClass()
         getData(0)
     }, []);
 

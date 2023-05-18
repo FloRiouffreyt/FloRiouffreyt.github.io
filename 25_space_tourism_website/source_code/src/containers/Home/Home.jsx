@@ -4,7 +4,13 @@ import './Home.css'
 
 const Home = () => {
 
+    function setRootClass() {
+        document.querySelector('#root').className = ''
+        document.querySelector('#root').classList.add('root_home')
+    }
+
     useEffect(() => {
+        setRootClass()
         const links = document.querySelectorAll('.navbar__list_item-link');
         const exploreBtn = document.querySelector('.home__grid_explore-btn');
         exploreBtn.addEventListener('click', () => {

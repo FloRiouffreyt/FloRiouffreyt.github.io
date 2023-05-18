@@ -54,3 +54,12 @@
     font-weight: 700;
     letter-spacing: 2.7px;
 }
+
+@media screen and (max-width: 1180px) {
+    .navbar__list {
+        gap: 2.25rem;
+    }
+    .navbar__list_item-link span {
+        display: none;
+    }
+}

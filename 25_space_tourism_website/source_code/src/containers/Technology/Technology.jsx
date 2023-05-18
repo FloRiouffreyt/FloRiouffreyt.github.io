@@ -29,7 +29,13 @@ const Technology = () => {
         })
     }, [tabs]);
 
+    function setRootClass() {
+        document.querySelector('#root').className = ''
+        document.querySelector('#root').classList.add('root_technology')
+    }
+
     useEffect(() => {
+        setRootClass()
         getData(0)
     }, []);
 

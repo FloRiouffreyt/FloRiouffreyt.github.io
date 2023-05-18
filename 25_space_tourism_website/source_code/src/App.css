@@ -9,8 +9,6 @@
 
 body {
     min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 #root {
@@ -18,9 +16,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    position: relative;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+.hidden {
+    display: none !important;
 }
