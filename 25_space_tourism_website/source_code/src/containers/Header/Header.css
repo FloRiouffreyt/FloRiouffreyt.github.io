@@ -47,6 +47,11 @@
     backdrop-filter: blur(40px);
     width: 66%;
     height: 100%;
+    transition: transform 400ms ease-out;
+}
+
+.hidden {
+    transform: translateX(100%) !important;
 }
 
 .mobile__menu,
@@ -55,6 +60,8 @@
     top: 2rem;
     right: 1.5rem;
     cursor: pointer;
+    background: transparent;
+    border: none;
     display: none;
 }
 

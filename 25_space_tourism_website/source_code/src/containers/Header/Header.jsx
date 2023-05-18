@@ -6,20 +6,35 @@ import {Navbar, NavbarMobile} from '../../components'
 
 const Header = () => {
 
+    
+    const showMobileNav = () => {
+        const mobileNav = document.querySelector('.header__navbar_mobile')
+        const mobileNavOpen = document.querySelector('.mobile__menu')
+        const mobileNavClose = document.querySelector('.mobile__menu_close')
+        mobileNav.classList.remove('hidden')
+        mobileNavOpen.style = 'display:none'
+        mobileNavClose.style = 'display:block'
+    }
+    
+    const hideMobileNav = () => {
+        const mobileNav = document.querySelector('.header__navbar_mobile')
+        const mobileNavOpen = document.querySelector('.mobile__menu')
+        const mobileNavClose = document.querySelector('.mobile__menu_close')
+        mobileNav.classList.add('hidden')
+        mobileNavOpen.style = 'display:block'
+        mobileNavClose.style = 'display:none'
+    }
+
     useEffect(() => {
         const links = document.querySelectorAll('.navbar__list_item-link');
         const homeBtn = document.querySelector('.header__logo');
         homeBtn.addEventListener('click', () => {
             for (let i = 0; i < links.length; i++) {
                 if (links[i].classList.contains('navbar__active')) {
-                    links[i]
-                        .classList
-                        .remove('navbar__active')
+                    links[i].classList.remove('navbar__active')
                 }
             }
-            links[0]
-                .classList
-                .add('navbar__active')
+            links[0].classList.add('navbar__active')
         })
     }, []);
 
@@ -41,19 +56,23 @@ const Header = () => {
             <div className='header__navbar'>
                 <Navbar/>
             </div>
-            <svg className='mobile__menu' xmlns="http://www.w3.org/2000/svg" width="24" height="21">
-                <g fill="#D0D6F9" fillRule="evenodd">
-                    <path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z"/>
-                </g>
-            </svg>
-            <svg className='mobile__menu_close' xmlns="http://www.w3.org/2000/svg" width="20" height="21">
-                <g fill="#D0D6F9" fillRule="evenodd">
-                    <path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z"/>
-                    <path d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z"/>
-                </g>
-            </svg>
+            <button className='mobile__menu' onClick={() => showMobileNav()}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21">
+                    <g fill="#D0D6F9" fillRule="evenodd">
+                        <path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z"/>
+                    </g>
+                </svg>
+            </button>
+            <button className='mobile__menu_close' onClick={() => hideMobileNav()}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21">
+                    <g fill="#D0D6F9" fillRule="evenodd">
+                        <path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z"/>
+                        <path d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z"/>
+                    </g>
+                </svg>
+            </button>
             <div className='header__navbar_mobile hidden'>
-                <NavbarMobile/>
+                <NavbarMobile hideMobileNav={hideMobileNav}/>
             </div>
         </div>
     )

@@ -125,6 +125,7 @@
     }
     .home__grid {
         grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(2, 0fr);
         margin-top: 6.625rem;
         gap: 9.75rem;
     }
@@ -156,6 +157,7 @@
         background-image: url(./home/background-home-mobile.jpg);
     }
     .home__grid {
+        margin-top: 3rem;
         gap: 5rem;
     }
     .home__grid_content-title span {

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import './NavbarMobile.css'
 
-const NavbarMobile = () => {
+const NavbarMobile = ( {hideMobileNav} ) => {
     
     useEffect(() => {
         const links = document.querySelectorAll('.navbar__mobile_list_item-link');
@@ -22,22 +22,22 @@ const NavbarMobile = () => {
         <>
             <ul className='navbar__mobile_list'>
                 <li className='navbar__mobile_list_item'>
-                    <Link to="/" className='navbar__mobile_list_item-link'>
+                    <Link to="/" className='navbar__mobile_list_item-link' onClick={hideMobileNav}>
                         <span>00</span>home
                     </Link>
                 </li>
                 <li className='navbar__mobile_list_item'>
-                    <Link to="/destination" className='navbar__mobile_list_item-link'>
+                    <Link to="/destination" className='navbar__mobile_list_item-link' onClick={hideMobileNav}>
                         <span>01</span>destination
                     </Link>
                 </li>
                 <li className='navbar__mobile_list_item'>
-                    <Link to="/crew" className='navbar__mobile_list_item-link'>
+                    <Link to="/crew" className='navbar__mobile_list_item-link' onClick={hideMobileNav}>
                         <span>02</span>crew
                     </Link>
                 </li>
                 <li className='navbar__mobile_list_item'>
-                    <Link to="/technology" className='navbar__mobile_list_item-link'>
+                    <Link to="/technology" className='navbar__mobile_list_item-link' onClick={hideMobileNav}>
                         <span>03</span>technology
                     </Link>
                 </li>
