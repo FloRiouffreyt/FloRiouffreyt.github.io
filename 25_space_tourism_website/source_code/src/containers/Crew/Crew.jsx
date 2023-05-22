@@ -50,7 +50,7 @@ const Crew = () => {
                 <div className='crew__content'>
                     {crew && <h2 className='crew__content_role'>{crew.role}</h2>}
                     {crew && <h3 className='crew__content_name'>{crew.name}</h3>}
-                    {crew && <p className='crew__content_text'>{crew.bio}</p>}
+                    {crew && <p className='crew__content_text' id={crew.role.toLowerCase().replaceAll(' ', '_')}>{crew.bio}</p>}
                     <div className='crew__content_slider'>
                         <ul className='crew__content_slider_list'>
                             <li onClick={() => getData(0)} className='crew__content_slider_list-item crew__active'></li>

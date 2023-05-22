@@ -1,21 +1,14 @@
+.root_crew {
+    background-image: url(./destination/background-destination-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+
 .crew {
     display: flex;
     flex: 1;
     margin-top: 4.75rem;
-}
-
-.crew::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url(./crew/background-crew-desktop.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: black;
-    z-index: -1;
 }
 
 .crew__grid {
@@ -103,6 +96,7 @@
 .crew__content_slider {
     margin-top: auto;
     margin-bottom: 5.75rem;
+    animation: 4s ease-in title-appear;
 }
 
 .crew__content_slider_list {
@@ -126,4 +120,105 @@
 
 .crew__active {
     background-color: rgba(var(--color-bg-btn)) !important;
+}
+
+@media screen and (max-width: 1180px) {
+    .root_crew {
+        background-image: url(./destination/background-crew-tablet.jpg);
+    }
+    .crew {
+        margin-top: 2.5rem;
+    }
+    .crew__title {
+        font-size: 1.25rem;
+        letter-spacing: 3.4px;
+        padding-inline: 2.375rem;
+        grid-column: 1/2;
+        margin-bottom: 3.75rem;
+    }
+    .crew__title span {
+        margin-right: 1.125rem;
+    }
+    .crew__content {
+        text-align: center;
+        align-items: center;
+    }
+    .crew__content_role {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .crew__content_name {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .crew__content_text {
+        font-size: 1rem;
+        line-height: 1.75rem;
+        margin-bottom: 2.5rem;
+        max-height: 85px;
+    }
+    .crew__content #commander {
+        max-width: 460px;
+    }
+    .crew__content #mission_specialist {
+        max-width: 520px;
+    }
+    .crew__content #pilot {
+        max-width: 595px;
+    }
+    .crew__content #flight_engineer {
+        max-width: 535px;
+    }
+    .crew__content_slider {
+        margin-bottom: 2.5rem;
+    }
+    .crew__grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 0fr 0fr 1fr;
+    }
+    .crew__img {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        max-height: 535px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .root_crew {
+        background-image: url(./destination/background-crew-mobile.jpg);
+    }
+    .crew__grid {
+        padding-inline: 1.5rem;
+    }
+    .crew__title {
+        font-size: 1rem;
+        letter-spacing: 2.7px;
+        margin-inline: auto;
+        margin-bottom: 2rem;
+    }
+    .crew__img {
+        grid-row: 2/3;
+        margin-inline: auto;
+        max-height: 223px;
+    }
+    .crew__content {
+        border-top: 1px solid #383b4b;
+    }
+    .crew__content_slider {
+        order: 1;
+        margin-block: 2rem;
+    }
+    .crew__content_role {
+        order: 2;
+        font-size: 1rem;
+    }
+    .crew__content_name {
+        order: 3;
+        font-size: 1.5rem;
+    }
+    .crew__content_text {
+        order: 4;
+        font-size: .938rem;
+        line-height: 1.5rem;
+    }
 }
