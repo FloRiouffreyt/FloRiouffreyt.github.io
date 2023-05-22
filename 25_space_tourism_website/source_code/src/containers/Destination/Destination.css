@@ -252,6 +252,7 @@
     .destination__content_text {
         font-size: .938rem;
         line-height: 1.5rem;
+        min-height: 120px;
         padding-inline: 1.5rem;
         margin-bottom: 2rem;
     }
