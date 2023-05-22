@@ -1,5 +1,5 @@
 .root_crew {
-    background-image: url(./destination/background-destination-desktop.jpg);
+    background-image: url(./crew/background-crew-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
@@ -124,7 +124,7 @@
 
 @media screen and (max-width: 1180px) {
     .root_crew {
-        background-image: url(./destination/background-crew-tablet.jpg);
+        background-image: url(./crew/background-crew-tablet.jpg);
     }
     .crew {
         margin-top: 2.5rem;
@@ -181,11 +181,15 @@
         grid-row: 3/4;
         max-height: 535px;
     }
+    .crew__content_slider_list-item {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 @media screen and (max-width:650px) {
     .root_crew {
-        background-image: url(./destination/background-crew-mobile.jpg);
+        background-image: url(./crew/background-crew-mobile.jpg);
     }
     .crew__grid {
         padding-inline: 1.5rem;
