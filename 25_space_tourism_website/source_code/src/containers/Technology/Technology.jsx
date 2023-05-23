@@ -5,6 +5,7 @@ const Technology = () => {
 
     const tabs = document.querySelectorAll('.technology__slider_btn')
     const [tech, setTech] = useState();
+    const [img, setImg] = useState();
 
     const getData = i => {
         fetch('data.json')
@@ -13,6 +14,11 @@ const Technology = () => {
         })
         .then(myData => {
             setTech(myData.technology[i])
+            if (window.innerWidth > 1430) {
+                setImg(myData.technology[i].images.portrait)
+            } else {
+                setImg(myData.technology[i].images.landscape)
+            }
         })
     }
 
@@ -39,6 +45,14 @@ const Technology = () => {
         getData(0)
     }, []);
 
+    window.addEventListener('resize', () => {
+        if (tech && window.innerWidth > 1430) {
+            setImg(tech.images.portrait)
+        } else if (tech && window.innerWidth <= 1430) {
+            setImg(tech.images.landscape)
+        }
+    })
+
     return (
         <div className='technology'>
             <div className='technology__grid'>
@@ -54,7 +68,7 @@ const Technology = () => {
                     {tech && <h3 className='technology__content_name'>{tech.name}</h3>}
                     {tech && <p className='technology__content_text'>{tech.description}</p>}
                 </div>
-                {tech && <img className='technology__img' src={tech.images.portrait} alt="Technology image"/>}
+                {tech && <img className='technology__img' src={img} alt="Technology image"/>}
             </div>
         </div>
     )

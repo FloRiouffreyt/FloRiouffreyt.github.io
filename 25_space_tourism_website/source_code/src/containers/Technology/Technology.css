@@ -1,5 +1,5 @@
 .root_technology {
-    background-image: url(./destination/background-technology-desktop.jpg);
+    background-image: url(./technology/background-technology-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
@@ -40,7 +40,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
-    margin-right: 5rem;
+    margin-inline: 0 5rem;
     animation: 2s ease-in title-appear;
 }
 
@@ -79,7 +79,9 @@
 }
 
 .technology__content_title {
+    font-size: 1rem;
     font-weight: 400;
+    letter-spacing: 2.7px;
     text-transform: uppercase;
     color: var(--font-color-alt);
     margin-bottom: .75rem;
@@ -111,103 +113,116 @@
     animation: 3s ease-in-out img-slide-left;
 }
 
-@media screen and (max-width: 1180px) {
-    .root_crew {
-        background-image: url(./destination/background-technology-tablet.jpg);
-    }
-    .crew {
+@media screen and (max-width: 1430px) {
+    .technology {
         margin-top: 2.5rem;
     }
-    .crew__title {
+    .technology__grid {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(4, 0fr);
+        margin-inline: 0;
+        gap: 0;
+    }
+    .technology__title {
+        grid-column: 1/2;
+        padding-inline: 10.25rem;
+        margin-bottom: 3.75rem;
+    }
+    .technology__slider {
+        flex-direction: row;
+        margin-inline: auto;
+        margin-bottom: 2.75rem;
+    }
+    .technology__content {
+        grid-row: 4/5;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 6rem;
+        margin-inline: auto;
+        width: 100%;
+    }
+    .technology__content_text {
+        margin-inline: auto;
+        max-width: 850px;
+    }
+    .technology__img {
+        grid-row: 2/3;
+        margin: 0;
+        width: 100%;
+        margin-bottom: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .root_technology {
+        background-image: url(./technology/background-technology-tablet.jpg);
+    }
+    .technology__title {
         font-size: 1.25rem;
         letter-spacing: 3.4px;
         padding-inline: 2.375rem;
         grid-column: 1/2;
         margin-bottom: 3.75rem;
     }
-    .crew__title span {
+    .technology__title span {
         margin-right: 1.125rem;
     }
-    .crew__content {
-        text-align: center;
-        align-items: center;
+    .technology__slider {
+        gap: 1rem;
     }
-    .crew__content_role {
+    .technology__slider_btn {
+        height: 3.75rem;
+        width: 3.75rem;
         font-size: 1.5rem;
-        margin-bottom: 0.5rem;
     }
-    .crew__content_name {
+    .technology__content_name {
         font-size: 2.5rem;
         margin-bottom: 1rem;
     }
-    .crew__content_text {
+    .technology__content_text {
+        max-width: 440px;
         font-size: 1rem;
-        line-height: 1.75rem;
-        margin-bottom: 2.5rem;
-        max-height: 85px;
-    }
-    .crew__content #commander {
-        max-width: 460px;
-    }
-    .crew__content #mission_specialist {
-        max-width: 520px;
-    }
-    .crew__content #pilot {
-        max-width: 595px;
-    }
-    .crew__content #flight_engineer {
-        max-width: 535px;
-    }
-    .crew__content_slider {
-        margin-bottom: 2.5rem;
-    }
-    .crew__grid {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: 0fr 0fr 1fr;
-    }
-    .crew__img {
-        grid-column: 1/2;
-        grid-row: 3/4;
-        max-height: 535px;
+        line-height: 1.5rem;
     }
 }
 
 @media screen and (max-width:650px) {
-    .root_crew {
-        background-image: url(./destination/background-technology-mobile.jpg);
+    .root_technology {
+        background-image: url(./technology/background-technology-mobile.jpg);
     }
-    .crew__grid {
-        padding-inline: 1.5rem;
+    .technology {
+        margin-top: 1.5rem;
     }
-    .crew__title {
+    .technology__title {
         font-size: 1rem;
         letter-spacing: 2.7px;
+        padding-inline: 0;
         margin-inline: auto;
         margin-bottom: 2rem;
     }
-    .crew__img {
-        grid-row: 2/3;
-        margin-inline: auto;
-        max-height: 223px;
+    .technology__title span {
+        margin-right: 1rem;
     }
-    .crew__content {
-        border-top: 1px solid #383b4b;
+    .technology__slider {
+        margin-bottom: 1.625rem;
     }
-    .crew__content_slider {
-        order: 1;
-        margin-block: 2rem;
-    }
-    .crew__content_role {
-        order: 2;
+    .technology__slider_btn {
+        height: 2.5rem;
+        width: 2.5rem;
         font-size: 1rem;
     }
-    .crew__content_name {
-        order: 3;
+    .technology__content {
+        margin-bottom: 5rem;
+    }
+    .technology__content_title {
+        font-size: .875rem;
+        margin-bottom: .5rem;
+    }
+    .technology__content_name {
         font-size: 1.5rem;
     }
-    .crew__content_text {
-        order: 4;
+    .technology__content_text {
+        padding-inline: 1.5rem;
         font-size: .938rem;
-        line-height: 1.5rem;
     }
 }
