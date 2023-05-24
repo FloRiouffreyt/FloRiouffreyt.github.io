@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
         <link
             rel="icon"
             type="image/png"
@@ -16,23 +16,76 @@
     </head>
     <body>
 
-        <footer class="attribution">
-			<p>Challenge by
-				<a
-					href="https://www.frontendmentor.io?ref=challenge"
-					rel="noopener noreferrer nofollow"
-					target="_blank">
-				Frontend Mentor</a>.
-			</p>
-			<p>Coded by
-				<a
-					href="https://github.com/FloRiouffreyt/floriouffreyt.github.io"
-					rel="noopener noreferrer nofollow"
-					target="_blank">
-				Florent Riouffreyt</a>.
-			</p>
-		</footer>
+        <div class="global__grid">
+            
+			<div class="main__grid">
+                
+				<header class="header">
+                    <h1 class="header__title">calc</h1>
+                    <div class="header__theme">
+                        <p class="header__theme_label">theme</p>
+                        <div class="header__theme_switch">
+                            <div class="header__theme_switch_label">
+                                <label for="light">1</label>
+                                <label for="alt">2</label>
+                                <label for="dark">3</label>
+                            </div>
+                            <div class="header__theme_switch_btn">
+                                <input type="radio" name="theme" id="light">
+                                <input type="radio" name="theme" id="alt">
+                                <input type="radio" name="theme" id="dark">
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                
+				<main class="calculator">
+                    <div class="calculator__result">
+                        <input type="text" id="result" aria-label="result field" readonly>
+                    </div>
+                    <div class="calculator__board">
+                        <button class="calculator__board_btn" value="7">7</button>
+                        <button class="calculator__board_btn" value="8">8</button>
+                        <button class="calculator__board_btn" value="9">9</button>
+                        <button class="calculator__board_btn" value="del" id="del">DEL</button>
+                        <button class="calculator__board_btn" value="4">4</button>
+                        <button class="calculator__board_btn" value="5">5</button>
+                        <button class="calculator__board_btn" value="6">6</button>
+                        <button class="calculator__board_btn" value="+" id="plus">+</button>
+                        <button class="calculator__board_btn" value="1">1</button>
+                        <button class="calculator__board_btn" value="2">2</button>
+                        <button class="calculator__board_btn" value="3">3</button>
+                        <button class="calculator__board_btn" value="-" id="minus">-</button>
+                        <button class="calculator__board_btn" value="." id="dot">.</button>
+                        <button class="calculator__board_btn" value="0">0</button>
+                        <button class="calculator__board_btn" value="/" id="divide">/</button>
+                        <button class="calculator__board_btn" value="x" id="times">x</button>
+                        <button class="calculator__board_btn" value="reset" id="reset">RESET</button>
+                        <button class="calculator__board_btn" value="=" id="equal">=</button>
+                    </div>
+                </main>
+                
+				<footer class="attribution">
+                    <p>Challenge by
+                        <a
+                            href="https://www.frontendmentor.io?ref=challenge"
+                            rel="noopener noreferrer nofollow"
+                            target="_blank">
+                            Frontend Mentor</a>.
+                    </p>
+                    <p>Coded by
+                        <a
+                            href="https://github.com/FloRiouffreyt/floriouffreyt.github.io"
+                            rel="noopener noreferrer nofollow"
+                            target="_blank">
+                            Florent Riouffreyt</a>.
+                    </p>
+                </footer>
 
-	<script src="script.js"></script>
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
     </body>
 </html>

@@ -1,4 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root {
+    --font-main: 'League Spartan', sans-serif;
+}
+
+:root[data-theme="light"] {
+    --font-color-main: #fff;
+    --font-color-alt: #fff;
+    --font-color-alt-2: #fff;
+    --font-color-numbers: #434a59;
+
+    --color-bg-body: #3a4663;
+    --color-bg-result: #181f33;
+    --color-bg-board: #242d44;
+
+    --color-btn-main: #eae3dc;
+    --color-btn-main-hover: #fffffe;
+    --color-btn-main-shadow: #b3a497;
+    --color-btn-alt: #647198;
+    --color-btn-alt-hover: #a2b2e1;
+    --color-btn-alt-shadow: #414e73;
+    --color-btn-accent: #d03f2f;
+    --color-btn-accent-hover: #f96b5b;
+    --color-btn-accent-shadow: #93261a;
+}
+
+:root[data-theme="alt"] {
+    --font-color-main: #36362c;
+    --font-color-alt: #fff;
+    --font-color-alt-2: #fff;
+    --font-color-numbers: #36362c;
+
+    --color-bg-body: #e6e6e6;
+    --color-bg-result: #eeeeee;
+    --color-bg-board: #d2cdcd;
+
+    --color-btn-main: #e5e4e1;
+    --color-btn-main-hover: #fff;
+    --color-btn-main-shadow: #a79e91;
+    --color-btn-alt: #378187;
+    --color-btn-alt-hover: #62b5bc;
+    --color-btn-alt-shadow: #1b6066;
+    --color-btn-accent: #c85402;
+    --color-btn-accent-hover: #ff8a38;
+    --color-btn-accent-shadow: #873901;
+}
+
+:root[data-theme="dark"] {
+    --font-color-main: #ffe53d;
+    --font-color-alt: #fff;
+    --font-color-alt-2: #1a2327;
+    --font-color-numbers: #ffe53d;
+
+    --color-bg-body: #17062a;
+    --color-bg-result: #1e0936;
+    --color-bg-board: #1e0936;
+
+    --color-btn-main: #331c4d;
+    --color-btn-main-hover: #6c34ac;
+    --color-btn-main-shadow: #881c9e;
+    --color-btn-alt: #56077c;
+    --color-btn-alt-hover: #8631af;
+    --color-btn-alt-shadow: #be15f4;
+    --color-btn-accent: #00ded0;
+    --color-btn-accent-hover: #93fff8;
+    --color-btn-accent-shadow: #6cf9f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+body {
+    background: var(--color-bg-body);
+    color: var(--font-color-main);
+}
+
+.global__grid {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.main__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 0fr);
+    max-width: 540px;
+    margin-inline: 1.5rem;
+}
+
+/* HEADER ----------> */
+
+.header {
+    grid-row: 1/2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.header__title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 50%;
+}
+
+.header__theme {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    gap: 1.625rem;
+}
+
+.header__theme_label {
+    text-transform: uppercase;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header__theme_switch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.header__theme_switch_label {
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.header__theme_switch_label label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+.header__theme_switch_label,
+.header__theme_switch_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__theme_switch_btn input {
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--color-bg-board);
+    cursor: pointer;
+}
+
+
+.header__theme_switch_btn input:first-child {
+    border-radius: 50% 0 0 50%;
+}
+
+.header__theme_switch_btn input:last-child {
+    border-radius: 0 50% 50% 0;
+}
+
+.header__theme_switch_btn {
+    position: relative;
+    transition: all 300ms ease-out;
+}
+
+.header__theme_switch_btn input::after {
+    content: '';
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    background: var(--color-btn-accent);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#light:checked::after {
+    left: 0.313rem;
+    opacity: 1;
+}
+#alt:checked::after {
+    left: 1.75rem;
+    opacity: 1;
+}
+#dark:checked:after {
+    left: 3.188rem;
+    opacity: 1;
+}
+
+/* MAIN ----------> */
+
+.calculator {
+    grid-row: 2/3;
+    margin-bottom: 2rem;
+}
+
+.calculator__result {
+    margin-bottom: 1.5rem;
+}
+
+.calculator__result input {
+    width: 100%;
+    background: var(--color-bg-result);
+    border: none;
+    border-radius: .625rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-align: right;
+    padding-inline: 2rem;
+    padding-block: 2.5rem 2rem;
+    color: var(--font-color-main);
+}
+
+.calculator__board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 4rem);
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--color-bg-board);
+    border-radius: .625rem;
+}
+
+.calculator__board button {
+    border: none;
+    box-shadow: inset 0px -4px 0px var(--color-btn-main-shadow);
+    background: var(--color-btn-main);
+    border-radius: .625rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--font-color-numbers);
+    letter-spacing: -0.5px;
+    cursor: pointer;
+}
+
+.calculator__board button:hover {
+    background: var(--color-btn-main-hover);
+}
+
+.calculator__board button:active {
+    box-shadow: none !important;
+    transform: translateY(4px);
+}
+
+#reset {
+    grid-column: 1/3;
+}
+
+#equal {
+    grid-column: 3/5;
+    color: var(--font-color-alt-2);
+    background: var(--color-btn-accent);
+    box-shadow: inset 0px -4px 0px var(--color-btn-accent-shadow);
+}
+
+#equal:hover {
+    background: var(--color-btn-accent-hover);
+}
+
+#del,
+#reset,
+#equal {
+    font-size: 1.75rem;
+}
+
+#del,
+#reset {
+    color: var(--font-color-alt);
+    background: var(--color-btn-alt);
+    box-shadow: inset 0px -4px 0px var(--color-btn-alt-shadow);
+}
+
+#del:hover,
+#reset:hover {
+    background: var(--color-btn-alt-hover);
+}
 
 /* FOOTER ----------> */
 
@@ -8,15 +296,36 @@
     font-size: .75rem;
     align-items: center;
     justify-content: center;
-    color: var(--font-color-alt);
+    color: var(--font-color-main);
     grid-column: 1/3;
 }
 
 .attribution a {
-    color: var(--font-color-main);
+    color: var(--color-btn-accent);
     transition: all 200ms ease-in-out;
 }
 
 .attribution a:hover {
-    color: var(--font-color-accent);
+    color: var(--color-btn-accent-hover);
+}
+
+@media screen and (max-width:480px) {
+    .calculator__result input {
+        font-size: 2.5rem;
+        letter-spacing: -0.7px;
+        padding-inline: 1.5rem;
+        padding-block: 1.875rem 1.375rem;
+    }
+    .calculator__board {
+        padding: 1.5rem;
+        gap: .75rem;
+    }
+    .calculator__board button {
+        font-size: 2rem;
+    }
+    #del,
+    #reset,
+    #equal {
+        font-size: 1.25rem;
+    }
 }
