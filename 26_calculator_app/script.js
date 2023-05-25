@@ -1,11 +1,71 @@
-let calc = 1 * 1234567
-let calcFormat = calc.toString().split('').reverse().join('').match(/.{1,3}/g).map(function(x){
-    return x.split('').reverse().join('')
-}).reverse()
-
-
 const resultField = document.querySelector('#result')
-resultField.value = calcFormat
+
+// CALCULATOR
+const calcInput = document.querySelectorAll('.calculator__board_btn')
+var toCalc = []
+var buffer = []
+var sign = ''
+var total = 0
+
+calcInput.forEach(input => {
+    input.addEventListener('click', e => {
+        if (!input.classList.contains('special')) {
+            toCalc.push(e.target.value)
+            toCalcDisplay = parseFloat(toCalc.join(''), 10)
+            resultField.value = +toCalc.join('')
+        } else if (input.classList.contains('special')) {
+            if (buffer.length === 0) {
+                sign = input.value
+                buffer = toCalc
+                toCalc = []
+            } else if (buffer.length > 0) {
+                if (input.id === 'equal' || input.id === 'plus' || input.id === 'minus' || input.id === 'times' || input.id === 'divide') {
+                    result1 = parseFloat(buffer.join(''), 10)
+                    result2 = parseFloat(toCalc.join(''), 10)
+                    switch (sign) {
+                        case '+':
+                        total = result1 + result2
+                        break;
+                        case '-':
+                        total = result1 - result2
+                        break;
+                        case '*':
+                        total = result1 * result2
+                        break;
+                        case '/':
+                        total = result1 / result2
+                        break;
+                    
+                        default:
+                            break;
+                        }
+                    toCalc = []
+                    buffer = total.toString().split('')
+                    resultField.value = +total.toFixed(10)
+                    sign = input.value
+                } else if (input.id === 'del') {
+                    if (toCalc.length > 0) {
+                        toCalc = []
+                        resultField.value = 0
+                    }
+                } else if (input.id === 'reset') {
+                    if (toCalc.length > 0 || buffer.length > 0) {
+                        buffer = []
+                        toCalc = []
+                        resultField.value = 0 
+                    }
+                }
+                else {
+                    sign = input.value
+                }
+            } 
+        }
+    })
+})
+
+// resultField.value = toCalcInt.toString().split('').reverse().join('').match(/.{1,3}/g).map(x => {
+//     return x.split('').reverse().join('')
+//     }).reverse()
 
 // THEME SWITCH BUTTON
 const storeTheme = theme => {
@@ -20,11 +80,11 @@ themeSwitch.forEach(theme => {
             document.documentElement.setAttribute('data-theme', 'light')
             storeTheme(e.target.id)
         }
-        if (e.target.id === "alt") {
+        if (e.target.id === 'alt') {
             document.documentElement.setAttribute('data-theme', 'alt')
             storeTheme(e.target.id)
         }
-        if (e.target.id === "dark") {
+        if (e.target.id === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark')
             storeTheme(e.target.id)
         }
@@ -58,4 +118,7 @@ const getFavTheme = () => {
     }
 }
 
-window.onload = getFavTheme()
+window.onload = () => {
+    getFavTheme()
+    resultField.value = 0
+} 
