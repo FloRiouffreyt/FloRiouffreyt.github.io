@@ -15,9 +15,15 @@ calcInput.forEach(input => {
             resultField.value = +toCalc.join('')
         } else if (input.classList.contains('special')) {
             if (buffer.length === 0) {
-                sign = input.value
-                buffer = toCalc
-                toCalc = []
+                if (input.id === 'del') {
+                    toCalc = []
+                    resultField.value = 0
+                } else {
+                    sign = input.value
+                    buffer = toCalc
+                    toCalc = []
+                } 
+                
             } else if (buffer.length > 0) {
                 if (input.id === 'equal' || input.id === 'plus' || input.id === 'minus' || input.id === 'times' || input.id === 'divide') {
                     result1 = parseFloat(buffer.join(''), 10)
