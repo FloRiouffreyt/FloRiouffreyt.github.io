@@ -1,0 +1,121 @@
+.todo {
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--font-color-body);
+    background: var(--color-bg-card);
+    padding-block: 1.25rem;
+    padding-inline: 1.5rem;
+    border-bottom: 1px solid var(--color-bg-border);
+    cursor: move;
+}
+
+.todo__completed {
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid var(--color-bg-border);
+    border-radius: 50%;
+    background: transparent;
+}
+
+.todo__completed:hover {
+    background:
+        linear-gradient(var(--color-bg-card), var(--color-bg-card)) padding-box,
+        var(--color-bg-gradient) border-box;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+
+.todo__completed:checked {
+    border: none;
+    background: var(--color-bg-gradient);
+}
+
+.todo__completed:checked::before {
+    content: url(../assets/icon-check.svg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.todo__completed:checked ~ .todo__title {
+    color: var(--font-color-body-complete);
+    text-decoration: line-through;
+}
+
+.todo__title {
+    flex: 1;
+    padding-inline: 1.5rem;
+    max-width: 415px;
+}
+
+.todo__btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+    opacity: 0;
+}
+
+.todo__btn .btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.todo:hover > .todo__btn {
+    opacity: 1;
+}
+
+.todo:first-child {
+    border-radius: .313rem .313rem 0 0;
+}
+
+/* UPDATING FORM ----------> */
+
+.todo__updating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.todo__updating input {
+    width: 100%;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--font-color-body);
+    padding-block: .5rem;
+    padding-inline: 1rem;
+    margin-inline: 2rem 1.5rem;
+    border: none;
+    background: var(--color-bg-main);
+    border-radius: .313rem;
+    caret-color: var(--font-color-accent);
+}
+
+.todo__updating button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+@media screen and (max-width:991px) {
+    .todo__btn {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .todo__completed:checked::before {
+        transform: translateX(-50%) translateY(-40%) scale(85%);
+    }
+}
