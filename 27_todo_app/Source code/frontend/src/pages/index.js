@@ -1,7 +1,0 @@
-export {default as Home} from './Home.jsx'
-export {default as Login} from './Login.jsx'
-export {default as Profile} from './Profile.jsx'
-export {default as Register} from './Register.jsx'
-export {default as LoggedInHome} from './LoggedInHome.jsx'
-export {default as UpdateProfile} from './UpdateProfile.jsx'
-export {default as UpdatePassword} from './UpdatePassword.jsx'
