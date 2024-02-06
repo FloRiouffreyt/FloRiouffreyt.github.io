@@ -46,11 +46,11 @@ const Planet = ({name, images, overview, structure, geology, rotation, revolutio
                 view === "overview" 
                 ? <img src={images.planet} alt={name} />
                 : view === "structure"
-                ? <img src={'../.' + images.internal} alt={name} />
+                ? <img src={images.internal} alt={name} />
                 : view === "geology"
                 &&  <>
-                    <img src={'../.' + images.planet} alt={name} className='planet__img'/>
-                    <img src={'../.' + images.geology} alt={name} className='planet__img-geology'/>
+                    <img src={images.planet} alt={name} className='planet__img'/>
+                    <img src={images.geology} alt={name} className='planet__img-geology'/>
                 </>
             }
             </div>
