@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --font-title: 'Antonio', sans-serif;
+    --font-text: 'League Spartan', sans-serif;
+
+    --font-color-main: #fff;
+    --font-color-faded: rgba(255,255,255,.5);
+
+    --color-bg-main: #070724;
+    --color-bg-view: #fff;
+    --color-border: rgba(255,255,255,.2)
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: var(--font-text);
+    background: var(--color-bg-main);
+    background-image: url(./assets/background-stars.svg);
+    color: var(--font-color-main);
+}
