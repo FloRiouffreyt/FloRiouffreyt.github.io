@@ -44,7 +44,7 @@ const Planet = ({name, images, overview, structure, geology, rotation, revolutio
             <div className='planet__main_grid-img'>
             {
                 view === "overview" 
-                ? <img src={'../.' + images.planet} alt={name} />
+                ? <img src={images.planet} alt={name} />
                 : view === "structure"
                 ? <img src={'../.' + images.internal} alt={name} />
                 : view === "geology"

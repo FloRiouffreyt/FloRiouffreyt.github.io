@@ -14,7 +14,6 @@ const App = () => {
         .then(resp => {
             return resp.json()
         }).then(data => {
-            console.log(data);
             setPlanets(data)
         })
     }
